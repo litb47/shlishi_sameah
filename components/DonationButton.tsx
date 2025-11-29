@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-import { Heart, X, Copy, Check } from "lucide-react";
+import { Heart, X } from 'lucide-react';
 
 interface DonationButtonProps {
   className?: string;
