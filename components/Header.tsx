@@ -19,18 +19,19 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('landing', 'projects')}
               className="text-foreground/80 hover:text-[#007aff] transition-colors focus:outline-none"
             >
+               מי אנחנו
+            </button>
+            <button 
+              onClick={() => onNavigate('gallery')}
+              className="text-foreground/80 hover:text-[#007aff] transition-colors flex items-center gap-2 focus:outline-none"
+            >
               הפרויקט
             </button>
             <button 
               onClick={() => onNavigate('landing', 'story')}
               className="text-foreground/80 hover:text-[#007aff] transition-colors focus:outline-none"
             >
-              מי אנחנו
-            </button>
-            <button 
-              onClick={() => onNavigate('gallery')}
-              className="text-foreground/80 hover:text-[#007aff] transition-colors flex items-center gap-2 focus:outline-none"
-            >
+           
               גלריה
             </button>
           </nav>
