@@ -1,5 +1,4 @@
 import React from "react";
-// וודא ש-DonationButton נמצא באותה תיקייה
 import { DonationButton } from "./DonationButton";
 
 export const Hero: React.FC = () => {
@@ -12,26 +11,27 @@ export const Hero: React.FC = () => {
   return (
     <section className="container mx-auto px-6 py-12 max-w-7xl">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
-        {/* Content - Right side in RTL */}
+        {/* צד ימין - טקסט */}
         <div className="order-2 lg:order-1 text-right animate-fade-in-up">
           <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
             שלישי שמח לחיילים שלנו!
           </h1>
 
-          {/* כותרת מעוצבת עם הפונטים המבוקשים */}
+          {/* --- כאן השינוי של הפונטים --- */}
           <div className="mb-8">
             <h2 className="text-[#0D245E] leading-tight">
-              {/* מחזירים אהבה - Guttman Yad */}
+              {/* מילה ראשונה: Guttman Yad */}
               <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
                 מחזירים אהבה
               </span>
               
-              {/* לגיבורים - Guttman Frank */}
+              {/* מילה שניה: Guttman Frank */}
               <span className="font-frank text-5xl md:text-6xl lg:text-7xl mt-2 block">
                 לגיבורים
               </span>
             </h2>
           </div>
+          {/* ----------------------------- */}
 
           <DonationButton />
 
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Image - Left side in RTL */}
+        {/* צד שמאל - תמונה */}
         <div className="order-1 lg:order-2 animate-scale-in">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/7d07097ba329151250d867d60152e474b7065c3b?placeholderIfAbsent=true"
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
+      {/* סטטיסטיקה */}
       <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         {stats.map((stat, index) => (
           <div
