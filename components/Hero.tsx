@@ -33,8 +33,6 @@ export const Hero: React.FC = () => {
           </div>
           {/* ----------------------------- */}
 
-          <DonationButton />
-
           <div className="mt-10">
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/1758672860bd2c6c1895ca0d56ba891739451a94?placeholderIfAbsent=true"
