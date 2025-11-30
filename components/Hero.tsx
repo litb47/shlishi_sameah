@@ -1,5 +1,4 @@
 import React from "react";
-import { DonationButton } from "./DonationButton";
 
 export const Hero: React.FC = () => {
   const stats = [
@@ -20,7 +19,7 @@ export const Hero: React.FC = () => {
           {/* --- כאן השינוי של הפונטים --- */}
           <div className="mb-8">
             <h2 className="text-[#0D245E] leading-tight">
-              {/* מילה ראשונה: Guttman Yad */}
+              {/* מילה ראשונה: Guttman Yad / buNotza */}
               <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
                 מחזירים אהבה
               </span>
