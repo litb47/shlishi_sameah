@@ -1,12 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-// DonationButton component
-const DonationButton = () => (
-  <button className="bg-[#0D245E] text-white px-8 py-3 rounded-full text-lg font-bold transition duration-300 hover:bg-[#1C4195] shadow-lg">
-    תרמו עכשיו
-  </button>
-);
+import { DonationButton } from "./DonationButton";
 
 export const Hero: React.FC = () => {
   const stats = [
@@ -24,9 +17,9 @@ export const Hero: React.FC = () => {
             שלישי שמח לחיילים שלנו!
           </h1>
 
-          {/* Styled Heading */}
+          {/* כותרת מעוצבת עם פונט נוטו למילה לגיבורים */}
           <div className="mb-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal font-buNotza text-[#0D245E] leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0D245E] leading-tight">
               מחזירים אהבה
               <br />
               <span className="font-noto text-5xl md:text-6xl lg:text-7xl mt-2 block">לגיבורים</span>
@@ -54,7 +47,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
+      {/* Stats Section with Hover Effect */}
       <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         {stats.map((stat, index) => (
           <div
@@ -73,11 +66,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-
-// Render logic
-const App = () => <Hero />;
-const rootElement = document.getElementById('root');
-if (rootElement) {
-    // @ts-ignore
-    ReactDOM.createRoot(rootElement).render(<App />);
-}
