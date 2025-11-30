@@ -17,19 +17,19 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           <nav className="hidden md:flex items-center gap-8 text-base font-medium">
             <button 
               onClick={() => onNavigate('landing', 'story')}
-              className="text-foreground/80 hover:text-[#007aff] transition-colors focus:outline-none"
+              className="text-[#0D245E] hover:text-[#007aff] transition-colors focus:outline-none"
             >
                מי אנחנו
             </button>
             <button 
               onClick={() => onNavigate('landing', 'projects')}
-              className="text-foreground/80 hover:text-[#007aff] transition-colors flex items-center gap-2 focus:outline-none"
+              className="text-[#0D245E] hover:text-[#007aff] transition-colors flex items-center gap-2 focus:outline-none"
             >
               הפרויקט
             </button>
             <button 
               onClick={() => onNavigate('landing', 'gallery')}
-              className="text-foreground/80 hover:text-[#007aff] transition-colors focus:outline-none"
+              className="text-[#0D245E] hover:text-[#007aff] transition-colors focus:outline-none"
             >
            
               גלריה
@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           {/* כפתור גלריה למובייל (אייקון בלבד) */}
           <button 
             onClick={() => onNavigate('landing', 'gallery')}
-            className="md:hidden text-foreground/80 hover:text-[#007aff] p-2 focus:outline-none"
+            className="md:hidden text-[#0D245E] hover:text-[#007aff] p-2 focus:outline-none"
           >
             <ImageIcon className="w-5 h-5 md:w-6 md:h-6" />
           </button>

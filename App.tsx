@@ -21,7 +21,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF6F6] font-sans text-gray-900" dir="rtl">
+    <div className="min-h-screen bg-[#FAF6F6] font-sans text-[#0D245E]" dir="rtl">
       <Header onNavigate={handleNavigate} />
       <main>
         <Hero />

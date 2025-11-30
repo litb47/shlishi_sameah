@@ -50,33 +50,33 @@ export const DonationButton: React.FC<DonationButtonProps> = ({ className = "", 
 
               {/* כותרת */}
               <div className="pt-8 pb-4 px-8 text-right">
-                <h2 className="text-2xl font-bold text-[#0f172a]">פרטי להעברה בנקאית</h2>
+                <h2 className="text-2xl font-bold text-[#0D245E]">פרטי להעברה בנקאית</h2>
               </div>
 
               {/* תוכן - רשימה מסודרת וצמודה */}
               <div className="px-8 pb-6 space-y-4">
                 {/* שורה 1 */}
                 <div className="flex flex-col items-start gap-1 text-right border-b border-gray-100 pb-3">
-                  <span className="text-gray-500 text-sm font-medium">בנק:</span>
-                  <span className="text-[#0f172a] font-bold text-xl">בנק הפועלים</span>
+                  <span className="text-[#0D245E] text-sm font-medium">בנק:</span>
+                  <span className="text-[#0D245E] font-bold text-xl">בנק הפועלים</span>
                 </div>
 
                 {/* שורה 2 */}
                 <div className="flex flex-col items-start gap-1 text-right border-b border-gray-100 pb-3">
-                  <span className="text-gray-500 text-sm font-medium">סניף:</span>
-                  <span className="text-[#0f172a] font-bold text-xl">532</span>
+                  <span className="text-[#0D245E] text-sm font-medium">סניף:</span>
+                  <span className="text-[#0D245E] font-bold text-xl">532</span>
                 </div>
 
                 {/* שורה 3 */}
                 <div className="flex flex-col items-start gap-1 text-right border-b border-gray-100 pb-3">
-                  <span className="text-gray-500 text-sm font-medium">חשבון:</span>
-                  <span className="text-[#0f172a] font-bold text-xl">572386</span>
+                  <span className="text-[#0D245E] text-sm font-medium">חשבון:</span>
+                  <span className="text-[#0D245E] font-bold text-xl">572386</span>
                 </div>
 
                 {/* שורה 4 */}
                 <div className="flex flex-col items-start gap-1 text-right border-b border-gray-100 pb-3">
-                  <span className="text-gray-500 text-sm font-medium">שם המוטב:</span>
-                  <span className="text-[#0f172a] font-bold text-xl">עמותת נכה לא חצי בן אדם</span>
+                  <span className="text-[#0D245E] text-sm font-medium">שם המוטב:</span>
+                  <span className="text-[#0D245E] font-bold text-xl">עמותת נכה לא חצי בן אדם</span>
                 </div>
               </div>
 
@@ -84,7 +84,7 @@ export const DonationButton: React.FC<DonationButtonProps> = ({ className = "", 
               <div className="px-8 pb-8">
                 <div className="bg-[#e0fbfd] rounded-xl p-4 flex items-start gap-3 border-r-4 border-orange-400">
                   <Heart className="w-5 h-5 text-blue-500 fill-blue-500 shrink-0 mt-1" />
-                  <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                  <p className="text-sm text-[#0D245E] leading-relaxed font-medium">
                     התרומה מוכרת לצרכי מס ומתבצעת עבור 'ארגון שלישי שמח' דרך עמותת 'נכה לא חצי בן אדם'
                   </p>
                 </div>

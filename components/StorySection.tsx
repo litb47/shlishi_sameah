@@ -42,10 +42,10 @@ const StorySection: React.FC = () => {
             <h2 className="text-3xl md:text-5xl font-bold text-[#007aff]">
               איך נולד שלישי שמח
             </h2>
-            <p className="text-lg md:text-xl text-[#1e3a8a] font-medium">
+            <p className="text-lg md:text-xl text-[#0D245E] font-medium">
               שלישי שמח הוא ארגון עצמאי, הכל בהתנדבות מלאה!
             </p>
-            <p className="text-lg md:text-xl text-[#1e3a8a] font-bold">
+            <p className="text-lg md:text-xl text-[#0D245E] font-bold">
               השכר שלנו הוא המצווה לשמח את הגיבורים.
             </p>
           </div>
@@ -71,7 +71,7 @@ const StorySection: React.FC = () => {
                 {/* צד טקסט */}
                 <div className="w-full md:w-1/2 text-center md:text-right space-y-4">
                   <h3 className="text-2xl font-bold text-[#007aff]">{item.title}</h3>
-                  <div className="text-lg text-gray-700 leading-relaxed font-medium">
+                  <div className="text-lg text-[#0D245E] leading-relaxed font-medium">
                     {item.desc}
                   </div>
                 </div>

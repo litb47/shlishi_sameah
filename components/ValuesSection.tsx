@@ -43,13 +43,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, IconCompo
         </div>
       </div>
 
-      {/* Title Area - השינוי המרכזי:
-         הסרנו את ה-min-h-[4rem] שגרם לרווח המיותר.
-         עכשיו הכותרת תופסת רק את המקום שהיא צריכה והטקסט יעלה מיד אחריה.
-      */}
+      {/* Title Area */}
       <div className="flex items-start justify-center w-full mb-2">
         <h3
-            className="text-xl md:text-2xl font-bold text-[#1e3a8a] leading-tight text-center"
+            className="text-xl md:text-2xl font-bold text-[#0D245E] leading-tight text-center"
             dangerouslySetInnerHTML={{ __html: title }}
         />
       </div>
@@ -58,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, IconCompo
       <div className="w-full flex justify-center">
         <div
             className="
-                text-base md:text-[1.05rem] font-normal text-[#334155] 
+                text-base md:text-[1.05rem] font-normal text-[#0D245E] 
                 leading-[1.6]                
                 text-center 
                 w-full 
@@ -81,17 +78,17 @@ const ValuesSection: React.FC = () => {
     {
       title: "כל מה שהגיבורים צריכים",
       IconComponent: HandIcon,
-      description: `אנחנו לא מסתפקים רק במנגלים. אנחנו עוטפים את החיילים בכל מה שהם צריכים - ביגוד איכותי, ספרי לימוד לאחים הקטנים, ציוד אישי, וכל בקשה שעולה מהלב.<span class="text-[#1e3a8a]">כי לגיבורים שלנו מגיע הכל. ואנחנו כאן בשבילם.</span>`,
+      description: `אנחנו לא מסתפקים רק במנגלים. אנחנו עוטפים את החיילים בכל מה שהם צריכים - ביגוד איכותי, ספרי לימוד לאחים הקטנים, ציוד אישי, וכל בקשה שעולה מהלב.<span class="text-[#0D245E]">כי לגיבורים שלנו מגיע הכל. ואנחנו כאן בשבילם.</span>`,
     },
     {
       title: `פרויקט הלגו ע"ש<br />בצלאל מסבכר הי"ד`,
       IconComponent: LegoIcon,
-      description: `הוקם באפריל 2025 לזכרו של בצלאל הי"ד. אנחנו רוכשים דגמי לגו יוקרתיים (2,500+ ש"ח) לפי הזמנה אישית של המשתקמים - כי הרכבת לגו היא לא רק תחביב, זו טיפול, ריכוז ושקט נפשי.<span class="text-[#1e3a8a]">עד כה חילקנו מעל 200 דגמים, ואנחנו ממשיכים!</span>`,
+      description: `הוקם באפריל 2025 לזכרו של בצלאל הי"ד. אנחנו רוכשים דגמי לגו יוקרתיים (2,500+ ש"ח) לפי הזמנה אישית של המשתקמים - כי הרכבת לגו היא לא רק תחביב, זו טיפול, ריכוז ושקט נפשי.<span class="text-[#0D245E]">עד כה חילקנו מעל 200 דגמים, ואנחנו ממשיכים!</span>`,
     },
     {
       title: "השבויים ששבו אלינו",
       IconComponent: RibbonIcon,
-      description: `פעילות שקטה ומתחת לרדאר במתחם השבים באיכילוב. אנחנו עובדים בשקט - מאבזרים דירות, מספקים קונסולות משחק, מנגלים מקצועיים למשפחות, וכל מה שצריך כדי להעלות חיוך על הפנים של מי שעבר את הבלתי נתפס.<span class="text-[#1e3a8a]">המטרה שלנו: לתת להם תחושה של בית, של נורמליות, של חיוך.</span>`,
+      description: `פעילות שקטה ומתחת לרדאר במתחם השבים באיכילוב. אנחנו עובדים בשקט - מאבזרים דירות, מספקים קונסולות משחק, מנגלים מקצועיים למשפחות, וכל מה שצריך כדי להעלות חיוך על הפנים של מי שעבר את הבלתי נתפס.<span class="text-[#0D245E]">המטרה שלנו: לתת להם תחושה של בית, של נורמליות, של חיוך.</span>`,
     },
   ];
 
@@ -101,8 +98,8 @@ const ValuesSection: React.FC = () => {
         <div className="bg-[#dbeafe] rounded-[2.5rem] p-8 md:p-16 shadow-sm">
           {/* Header Section */}
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#1e3a8a]">עוטפים את הגיבורים באהבה</h2>
-            <p className="text-lg md:text-2xl text-[#475569] font-medium max-w-2xl mx-auto [text-wrap:balance]">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0D245E]">עוטפים את הגיבורים באהבה</h2>
+            <p className="text-lg md:text-2xl text-[#0D245E] font-medium max-w-2xl mx-auto [text-wrap:balance]">
               הפרויקטים שלנו נועדו להחזיר חיוך לפנים של מי שנתן הכל
             </p>
           </div>

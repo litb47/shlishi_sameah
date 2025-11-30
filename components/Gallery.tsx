@@ -47,7 +47,7 @@ export const Gallery: React.FC = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-[#0D245E] mb-4">הגלריה שלנו</h1>
-          <p className="text-lg text-gray-600">רגעים מרגשים של נתינה ושמחה</p>
+          <p className="text-lg text-[#0D245E]">רגעים מרגשים של נתינה ושמחה</p>
         </div>
 
         {/* אזור העלאת תמונות */}
@@ -75,8 +75,8 @@ export const Gallery: React.FC = () => {
               <Upload className="w-8 h-8" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-700 mb-2">העלו תמונות לגלריה</h3>
-              <p className="text-gray-500">
+              <h3 className="text-xl font-bold text-[#0D245E] mb-2">העלו תמונות לגלריה</h3>
+              <p className="text-[#0D245E]">
                 גררו תמונות לכאן או לחצו לבחירה מהמכשיר
               </p>
             </div>
@@ -86,8 +86,8 @@ export const Gallery: React.FC = () => {
         {/* תצוגת התמונות (Grid) */}
         {images.length === 0 ? (
           <div className="text-center py-20 opacity-50">
-            <ImageIcon className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-            <p className="text-xl text-gray-400 font-medium">הגלריה עדיין ריקה... היו הראשונים להעלות תמונה!</p>
+            <ImageIcon className="w-16 h-16 mx-auto mb-4 text-[#0D245E]" />
+            <p className="text-xl text-[#0D245E] font-medium">הגלריה עדיין ריקה... היו הראשונים להעלות תמונה!</p>
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -118,8 +118,8 @@ export const Gallery: React.FC = () => {
               onClick={() => fileInputRef.current?.click()}
               className="flex flex-col items-center justify-center aspect-square bg-white border-2 border-dashed border-gray-300 rounded-2xl hover:border-[#007aff] hover:bg-blue-50 transition-all group"
             >
-              <Plus className="w-8 h-8 text-gray-400 group-hover:text-[#007aff] mb-2" />
-              <span className="text-sm font-medium text-gray-500 group-hover:text-[#007aff]">הוסף עוד</span>
+              <Plus className="w-8 h-8 text-[#0D245E] group-hover:text-[#007aff] mb-2" />
+              <span className="text-sm font-medium text-[#0D245E] group-hover:text-[#007aff]">הוסף עוד</span>
             </button>
           </div>
         )}
