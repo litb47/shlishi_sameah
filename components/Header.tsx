@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               הפרויקט
             </button>
             <button 
-              onClick={() => onNavigate('gallery')}
+              onClick={() => onNavigate('landing', 'gallery')}
               className="text-foreground/80 hover:text-[#007aff] transition-colors focus:outline-none"
             >
            
@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           
           {/* כפתור גלריה למובייל (אייקון בלבד) */}
           <button 
-            onClick={() => onNavigate('gallery')}
+            onClick={() => onNavigate('landing', 'gallery')}
             className="md:hidden text-foreground/80 hover:text-[#007aff] p-2 focus:outline-none"
           >
             <ImageIcon className="w-5 h-5 md:w-6 md:h-6" />

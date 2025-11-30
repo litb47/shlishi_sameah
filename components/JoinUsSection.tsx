@@ -73,7 +73,7 @@ export const JoinUsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 container mx-auto px-6 max-w-7xl">
+    <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
       {/* Donation CTA */}
       <div className="text-center mb-16 animate-fade-in-up">
         {/* Hugging Hearts Image */}
