@@ -9,8 +9,8 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   return (
     <header className="bg-[#FAF6F6]/80 sticky top-0 z-50 w-full border-b border-gray-200/50 backdrop-blur-sm">
-      <div className="container mx-auto flex items-center justify-between px-6 py-4 max-w-7xl">
-        <div className="flex items-center gap-4 md:gap-10">
+      <div className="container mx-auto flex items-center justify-between px-4 py-2 md:px-6 md:py-4 max-w-7xl">
+        <div className="flex items-center gap-2 md:gap-10">
           <DonationButton />
           
           {/* תפריט ניווט */}
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             onClick={() => onNavigate('gallery')}
             className="md:hidden text-foreground/80 hover:text-[#007aff] p-2 focus:outline-none"
           >
-            <ImageIcon className="w-6 h-6" />
+            <ImageIcon className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
         
@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
         >
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/5bdd26699dc1b606f917fd79d3a5f75c071ea673?placeholderIfAbsent=true"
-            className="w-24 h-24 object-contain"
+            className="w-14 h-14 md:w-24 md:h-24 object-contain"
             alt="שלישי שמח לוגו"
           />
         </button>

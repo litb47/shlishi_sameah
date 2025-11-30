@@ -26,9 +26,9 @@ export const DonationButton: React.FC<DonationButtonProps> = ({ className = "", 
       {/* הכפתור הראשי */}
       <button
         onClick={handleClick}
-        className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 text-lg font-semibold text-white bg-[#007aff] rounded-full hover:bg-blue-600 hover:scale-105 transition-all shadow-md hover:shadow-lg ${className}`}
+        className={`inline-flex items-center justify-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-5 md:py-2.5 text-sm md:text-lg font-semibold text-white bg-[#007aff] rounded-full hover:bg-blue-600 hover:scale-105 transition-all shadow-md hover:shadow-lg ${className}`}
       >
-        <Heart className="w-5 h-5 fill-current" />
+        <Heart className="w-4 h-4 md:w-5 md:h-5 fill-current" />
         <span>לתרומה באהבה</span>
       </button>
 
