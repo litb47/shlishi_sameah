@@ -100,7 +100,7 @@ const ValuesSection: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="scroll-mt-40 py-16 bg-[#FAF6F6]" dir="rtl">
+    <section id="projects" className="scroll-mt-40 py-16 bg-transparent" dir="rtl">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="bg-[#dbeafe] rounded-[2.5rem] p-8 md:p-16 shadow-sm">
           {/* Header Section */}

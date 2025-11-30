@@ -25,12 +25,16 @@ const App: React.FC = () => {
       <Header onNavigate={handleNavigate} />
       <main>
         <Hero />
-        <StorySection />
-        <ValuesSection />
-        {/* This section now has id="gallery" for navigation */}
-        <JoinUsSection />
+        
+        {/* Pink Gradient Background Wrapper covering Story, Values, JoinUs and Footer */}
+        <div className="bg-gradient-to-b from-white via-[#fff0f5] to-[#ffe4e1]">
+          <StorySection />
+          <ValuesSection />
+          {/* This section now has id="gallery" for navigation */}
+          <JoinUsSection />
+          <Footer />
+        </div>
       </main>
-      <Footer />
     </div>
   );
 };
