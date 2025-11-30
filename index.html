@@ -1,69 +1,37 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>שלישי שמח</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Brush&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet" />
     
     <style>
-        /* --- הגדרות עיצוב בסיסיות --- */
-        body {
-            font-family: "Rubik", sans-serif;
-        }
+      body { font-family: "Rubik", sans-serif; }
+      
+      /* הפונטים המיוחדים */
+      .font-yad { font-family: "Guttman Yad", "Rubik Brush", cursive; }
+      .font-frank { font-family: "Guttman Frank", "Frank Ruhl Libre", serif; font-weight: bold; }
 
-        /* --- הגדרות הפונטים החדשות שלך --- */
-        
-        /* מחזירים אהבה: Guttman Yad */
-        .font-yad {
-            font-family: "Guttman Yad", "Rubik Brush", cursive;
-        }
-
-        /* לגיבורים: Guttman Frank */
-        .font-frank {
-            font-family: "Guttman Frank", "Frank Ruhl Libre", serif;
-            font-weight: bold;
-        }
-
-        /* --- אנימציות (מקורי) --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        .animate-scale-in {
-            animation: scaleIn 0.5s ease-out forwards;
-        }
-        
-        .hover-lift {
-            transition: transform 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-        }
+      /* אנימציות */
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+      @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+      .animate-scale-in { animation: scaleIn 0.5s ease-out forwards; }
     </style>
-
+    
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
     "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "lucide-react": "https://esm.sh/lucide-react@0.263.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
     "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
     "vite": "https://aistudiocdn.com/vite@^7.2.4",
     "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
@@ -71,101 +39,9 @@
 }
 </script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
-
-    <script type="text/babel" data-type="module">
-        import React from "react";
-        import { createRoot } from "react-dom/client";
-
-        // רכיב כפתור תרומה (הוגדר כאן כדי שהקוד יעבוד מלא)
-        const DonationButton = () => (
-            <button className="bg-[#0D245E] text-white px-8 py-3 rounded-full text-lg font-bold transition duration-300 hover:bg-[#1C4195] shadow-lg">
-                תרמו עכשיו
-            </button>
-        );
-
-        // --- הקומפוננטה Hero המתוקנת ---
-        const Hero = () => {
-            const stats = [
-                { value: "1.5", label: "שנות פעילות (מאז יוני 2024)" },
-                { value: "50+", label: "מתנדבים פעילים" },
-                { value: "1000+", label: "חיילים שנעזרו" }
-            ];
-
-            return (
-                <section className="container mx-auto px-6 py-12 max-w-7xl">
-                    <div className="grid lg:grid-cols-2 gap-10 items-center">
-                        
-                        {/* צד ימין (טקסט) */}
-                        <div className="order-2 lg:order-1 text-right animate-fade-in-up">
-                            <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                                שלישי שמח לחיילים שלנו!
-                            </h1>
-
-                            {/* הכותרת עם הפונטים המתוקנים */}
-                            <div className="mb-8">
-                                <h2 className="text-[#0D245E] leading-tight">
-                                    {/* מחזירים אהבה - פונט יד */}
-                                    <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
-                                        מחזירים אהבה
-                                    </span>
-                                    
-                                    {/* לגיבורים - פונט פרנק */}
-                                    <span className="font-frank text-5xl md:text-6xl lg:text-7xl mt-2 block">
-                                        לגיבורים
-                                    </span>
-                                </h2>
-                            </div>
-
-                            <DonationButton />
-
-                            <div className="mt-10">
-                                <img
-                                    src="https://api.builder.io/api/v1/image/assets/TEMP/1758672860bd2c6c1895ca0d56ba891739451a94?placeholderIfAbsent=true"
-                                    className="w-full max-w-md"
-                                    alt="תמונה דקורטיבית"
-                                />
-                            </div>
-                        </div>
-
-                        {/* צד שמאל (תמונה ראשית) */}
-                        <div className="order-1 lg:order-2 animate-scale-in">
-                            <img
-                                src="https://api.builder.io/api/v1/image/assets/TEMP/7d07097ba329151250d867d60152e474b7065c3b?placeholderIfAbsent=true"
-                                className="w-full rounded-br-[150px] shadow-xl"
-                                alt="חיילים שמחים"
-                            />
-                        </div>
-                    </div>
-
-                    {/* סטטיסטיקה */}
-                    <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {stats.map((stat, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#AAD1FB] border border-[#D3DCE7] rounded-xl p-8 text-center transition-all duration-300 hover:bg-[#8Cbef9] hover:shadow-lg hover:-translate-y-1 group cursor-default"
-                            >
-                                <div className="text-[#0D245E] text-6xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">
-                                    {stat.value}
-                                </div>
-                                <div className="text-[#0D245E] text-xl font-medium">
-                                    {stat.label}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
-
-        // אתחול האפליקציה
-        const rootElement = document.getElementById('root');
-        if (rootElement) {
-            const root = createRoot(rootElement);
-            root.render(<Hero />);
-        }
-    </script>
-</body>
+    <script type="text/babel" data-type="module" src="/index.tsx"></script>
+  </body>
 </html>

@@ -1,4 +1,5 @@
 import React from "react";
+// וודא ש-DonationButton נמצא באותה תיקייה
 import { DonationButton } from "./DonationButton";
 
 export const Hero: React.FC = () => {
@@ -17,12 +18,18 @@ export const Hero: React.FC = () => {
             שלישי שמח לחיילים שלנו!
           </h1>
 
-          {/* כותרת מעוצבת עם פונט נוטו למילה לגיבורים */}
+          {/* כותרת מעוצבת עם הפונטים המבוקשים */}
           <div className="mb-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0D245E] leading-tight">
-              מחזירים אהבה
-              <br />
-              <span className="font-noto text-5xl md:text-6xl lg:text-7xl mt-2 block">לגיבורים</span>
+            <h2 className="text-[#0D245E] leading-tight">
+              {/* מחזירים אהבה - Guttman Yad */}
+              <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
+                מחזירים אהבה
+              </span>
+              
+              {/* לגיבורים - Guttman Frank */}
+              <span className="font-frank text-5xl md:text-6xl lg:text-7xl mt-2 block">
+                לגיבורים
+              </span>
             </h2>
           </div>
 
@@ -47,7 +54,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Section with Hover Effect */}
+      {/* Stats Section */}
       <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         {stats.map((stat, index) => (
           <div
