@@ -26,13 +26,27 @@ const App: React.FC = () => {
       <main>
         <Hero />
         
-        {/* Pink Gradient Background Wrapper covering Story, Values, JoinUs and Footer */}
-        <div className="bg-gradient-to-b from-white via-[#fff0f5] to-[#ffe4e1]">
-          <StorySection />
-          <ValuesSection />
-          {/* This section now has id="gallery" for navigation */}
-          <JoinUsSection />
-          <Footer />
+        {/* Ambient Glow Background Wrapper */}
+        <div className="relative bg-[#f3f4f6] overflow-hidden">
+          
+          {/* Top-Left Glow: Large, blurred light-blue orb */}
+          <div 
+            className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-60 -translate-x-1/3 -translate-y-1/3 pointer-events-none z-0"
+          ></div>
+
+          {/* Bottom-Right Glow: Large, blurred soft pink/red orb */}
+          <div 
+            className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-pink-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-60 translate-x-1/3 translate-y-1/3 pointer-events-none z-0"
+          ></div>
+
+          {/* Content Container - z-10 ensures content sits above the background orbs */}
+          <div className="relative z-10">
+            <StorySection />
+            <ValuesSection />
+            {/* This section now has id="gallery" for navigation */}
+            <JoinUsSection />
+            <Footer />
+          </div>
         </div>
       </main>
     </div>
