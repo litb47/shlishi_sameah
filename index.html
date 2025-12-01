@@ -9,24 +9,35 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Brush&family=Frank+Ruhl+Libre:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet" />
     
     <style>
+      /* --- 1. הגדרת הפונט המקומי (BuNotza) --- */
+      @font-face {
+        font-family: 'BuNotza';
+        /* אנחנו נותנים לדפדפן שתי אפשרויות לנתיב כדי למנוע טעויות */
+        src: url('/fonts/bunotza.ttf') format('truetype'),
+             url('fonts/bunotza.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
       body {
         font-family: "Rubik", sans-serif;
       }
 
-      /* --- הגדרת הפונטים המיוחדים --- */
-      
-      /* עבור "מחזירים אהבה" */
+      /* --- 2. המחלקה שמחברת את הפונט לאתר --- */
       .font-yad {
-        font-family: "buNotza", "Guttman Yad", "Rubik Brush", cursive;
+        /* הסדר חשוב: קודם תנסה BuNotza, אם לא מצליח -> תציג Rubik Marker Hatch */
+        font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
+        font-weight: normal; 
       }
 
       /* עבור "לגיבורים" */
       .font-frank {
         font-family: "Guttman Frank", "Frank Ruhl Libre", serif;
-        font-weight: 700; /* מודגש */
+        font-weight: 700;
       }
 
       /* --- אנימציות --- */
