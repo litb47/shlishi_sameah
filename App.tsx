@@ -29,14 +29,14 @@ const App: React.FC = () => {
         {/* Ambient Glow Background Wrapper */}
         <div className="relative bg-[#f3f4f6] overflow-hidden">
           
-          {/* Top-Left Glow: Large, blurred light-blue orb */}
+          {/* Top-Left Glow: Responsive size (smaller on mobile) */}
           <div 
-            className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-60 -translate-x-1/3 -translate-y-1/3 pointer-events-none z-0"
+            className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-blue-200 rounded-full mix-blend-multiply filter blur-[80px] md:blur-[120px] opacity-60 -translate-x-1/3 -translate-y-1/3 pointer-events-none z-0"
           ></div>
 
-          {/* Bottom-Right Glow: Large, blurred soft pink/red orb */}
+          {/* Bottom-Right Glow: Responsive size (smaller on mobile) */}
           <div 
-            className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-pink-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-60 translate-x-1/3 translate-y-1/3 pointer-events-none z-0"
+            className="absolute bottom-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-pink-300 rounded-full mix-blend-multiply filter blur-[80px] md:blur-[120px] opacity-60 translate-x-1/3 translate-y-1/3 pointer-events-none z-0"
           ></div>
 
           {/* Content Container - z-10 ensures content sits above the background orbs */}
