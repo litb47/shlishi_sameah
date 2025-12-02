@@ -44,27 +44,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, IconCompo
         </div>
       </div>
 
-      {/* Title Area */}
-      <div className="flex items-start justify-center w-full mb-2">
+      {/* Title Area - RIGHT ALIGNED */}
+      <div className="w-full flex justify-center mb-2">
         <h3
-            className="text-xl md:text-2xl font-bold text-[#0D245E] leading-tight text-center"
+            className="text-xl md:text-2xl font-bold text-[#0D245E] leading-tight text-right w-[267px] max-w-full"
             dangerouslySetInnerHTML={{ __html: title }}
         />
       </div>
 
-      {/* Description - FIXED WIDTH 267px & CENTERED */}
+      {/* Description - FIXED WIDTH 267px & RIGHT ALIGNED */}
       <div className="w-full flex justify-center">
         <div
             className="
                 text-base font-normal text-[#0D245E] 
                 leading-[22px]                
-                text-center 
+                text-right
                 w-[267px] max-w-full
                 mx-auto
                 [text-wrap:balance]
                 [&_span]:block             
                 [&_span]:mt-4              
                 [&_span]:font-bold
+                [&_span]:text-right
             "
             dangerouslySetInnerHTML={{ __html: description }}
         />
