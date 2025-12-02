@@ -30,9 +30,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet" />
     
     <style>
-      /* --- 1. הגדרת הפונט המקומי (BuNotza) --- */
+      /* --- 1. הגדרת הפונט המקומי (bunotza) --- */
       @font-face {
-        font-family: 'bunotza';
+        font-family: bunotza';
         /* הנתיב הזה מחפש את הקובץ בתיקיית public/fonts */
         src: url('/fonts/bunotza.ttf') format('truetype');
         font-weight: normal;
@@ -47,7 +47,7 @@
 
       /* --- 2. המחלקה המיוחדת לכתב יד --- */
       .font-yad {
-        /* הסדר: נסה את BuNotza (המקומי) -> אם לא עובד, קח את Rubik Marker Hatch (גוגל) */
+        /* הסדר: נסה את bunotza (המקומי) -> אם לא עובד, קח את Rubik Marker Hatch (גוגל) */
         font-family: 'bunotza', 'Rubik Marker Hatch', cursive;
         font-weight: normal; 
       }
