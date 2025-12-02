@@ -1,6 +1,11 @@
 import React from "react";
 
 export const Hero: React.FC = () => {
+  // בדיקה
+  React.useEffect(() => {
+    console.log('Available fonts:', document.fonts);
+  }, []);
+
   const stats = [
     { value: "1.5", label: "שנות פעילות (מאז יוני 2024)" },
     { value: "50+", label: "מתנדבים פעילים" },
@@ -19,12 +24,12 @@ export const Hero: React.FC = () => {
           {/* --- כאן השינוי של הפונטים --- */}
           <div className="mb-8">
             <h2 className="text-[#0D245E] leading-tight">
-              {/* מילה ראשונה: Guttman Yad / buNotza */}
+              {/* מילה ראשונה: BuNotza */}
               <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
                 מחזירים אהבה
               </span>
               
-              {/* מילה שניה: Guttman Frank */}
+              {/* מילה שניה: Frank */}
               <span className="font-frank text-5xl md:text-6xl lg:text-7xl mt-2 block">
                 לגיבורים
               </span>

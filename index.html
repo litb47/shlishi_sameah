@@ -9,32 +9,33 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet" />
     
     <style>
       /* --- 1. הגדרת הפונט המקומי (BuNotza) --- */
       @font-face {
         font-family: 'BuNotza';
-        /* אנחנו נותנים לדפדפן שתי אפשרויות לנתיב כדי למנוע טעויות */
-        src: url('/fonts/bunotza.ttf') format('truetype'),
-             url('fonts/bunotza.ttf') format('truetype');
+        /* הנתיב הזה מחפש את הקובץ בתיקיית public/fonts */
+        src: url('/fonts/BuNotza.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
       }
 
+      /* הגדרות בסיס */
       body {
         font-family: "Rubik", sans-serif;
       }
 
-      /* --- 2. המחלקה שמחברת את הפונט לאתר --- */
+      /* --- 2. המחלקה המיוחדת לכתב יד --- */
       .font-yad {
-        /* הסדר חשוב: קודם תנסה BuNotza, אם לא מצליח -> תציג Rubik Marker Hatch */
+        /* הסדר: נסה את BuNotza (המקומי) -> אם לא עובד, קח את Rubik Marker Hatch (גוגל) */
         font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
         font-weight: normal; 
       }
 
-      /* עבור "לגיבורים" */
+      /* --- 3. פונט לגיבורים (פרנק) --- */
       .font-frank {
         font-family: "Guttman Frank", "Frank Ruhl Libre", serif;
         font-weight: 700;

@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'BuNotza';
+  src: url('/fonts/BuNotza.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-yad {
+  font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
+  font-weight: normal; 
+}
+
+.font-frank {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 700;
+}
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>שלישי שמח</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet" />
+    
+    <style>
+      /* --- 1. הגדרת הפונט המקומי (BuNotza) --- */
+      @font-face {
+        font-family: 'BuNotza';
+        /* הנתיב הזה מחפש את הקובץ בתיקיית public/fonts */
+        src: url('/fonts/BuNotza.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* הגדרות בסיס */
+      body {
+        font-family: "Rubik", sans-serif;
+      }
+
+      /* --- 2. המחלקה המיוחדת לכתב יד --- */
+      .font-yad {
+        /* הסדר: נסה את BuNotza (המקומי) -> אם לא עובד, קח את Rubik Marker Hatch (גוגל) */
+        font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
+        font-weight: normal; 
+      }
+
+      /* --- 3. פונט לגיבורים (פרנק) --- */
+      .font-frank {
+        font-family: "Guttman Frank", "Frank Ruhl Libre", serif;
+        font-weight: 700;
+      }
+
+      /* --- אנימציות --- */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-scale-in {
+        animation: scaleIn 0.5s ease-out forwards;
+      }
+      
+      .hover-lift {
+          transition: transform 0.3s ease;
+      }
+      .hover-lift:hover {
+          transform: translateY(-5px);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
