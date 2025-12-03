@@ -7,20 +7,20 @@ import { Instagram, CheckCircle } from 'lucide-react';
 // --------------------------------------------------------
 
 // קבוצה 1: על האש (BBQ)
-import bbq1 from '../assets/instagram/bbq1.jpg';
-import bbq2 from '../assets/instagram/bbq2.jpg';
-import bbq3 from '../assets/instagram/bbq3.jpg';
+import bbq1 from './assets/instagram/bbq1.jpg';
+import bbq2 from './assets/instagram/bbq2.jpg';
+import bbq3 from './assets/instagram/bbq3.jpg';
 
 // קבוצה 2: חברים/קהילה (Friends)
 // (הנחתי שהשמות הם friends1, friends2 וכו' לפי הצילום מסך)
-import friend1 from '../assets/instagram/friends1.jpg';
-import friend2 from '../assets/instagram/friends2.jpg';
-import friend3 from '../assets/instagram/friends3.jpg';
+import friend1 from './assets/instagram/friends1.jpg';
+import friend2 from './assets/instagram/friends2.jpg';
+import friend3 from './assets/instagram/friends3.jpg';
 
 // קבוצה 3: חיילים (Soldiers)
-import sol1 from '../assets/instagram/sol1.jpg';
-import sol2 from '../assets/instagram/sol2.jpg';
-import sol3 from '../assets/instagram/sol3.jpg';
+import sol1 from './assets/instagram/sol1.jpg';
+import sol2 from './assets/instagram/sol2.jpg';
+import sol3 from './assets/instagram/sol3.jpg';
 
 // הערה: אם יש לך עוד תמונות לקבוצה 4, תייבא אותן כאן.
 // בינתיים יצרתי מיקס מהתמונות הקיימות עבור הריבוע הרביעי.
