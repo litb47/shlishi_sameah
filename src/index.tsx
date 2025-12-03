@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DonationButton } from './DonationButton';
+import { DonationButton } from './components/DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
