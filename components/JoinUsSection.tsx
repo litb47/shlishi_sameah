@@ -2,12 +2,37 @@ import React, { useState, useEffect } from 'react';
 import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
-// רכיב ריבוע בודד שמחליף תמונות
+// --------------------------------------------------------
+// חלק א: ייבוא התמונות מהתיקייה המקומית
+// --------------------------------------------------------
+
+// קבוצה 1: על האש (BBQ)
+import bbq1 from '../assets/instagram/bbq1.jpg';
+import bbq2 from '../assets/instagram/bbq2.jpg';
+import bbq3 from '../assets/instagram/bbq3.jpg';
+
+// קבוצה 2: חברים/קהילה (Friends)
+// (הנחתי שהשמות הם friends1, friends2 וכו' לפי הצילום מסך)
+import friend1 from '../assets/instagram/friends1.jpg';
+import friend2 from '../assets/instagram/friends2.jpg';
+import friend3 from '../assets/instagram/friends3.jpg';
+
+// קבוצה 3: חיילים (Soldiers)
+import sol1 from '../assets/instagram/sol1.jpg';
+import sol2 from '../assets/instagram/sol2.jpg';
+import sol3 from '../assets/instagram/sol3.jpg';
+
+// הערה: אם יש לך עוד תמונות לקבוצה 4, תייבא אותן כאן.
+// בינתיים יצרתי מיקס מהתמונות הקיימות עבור הריבוע הרביעי.
+
+
+// --------------------------------------------------------
+// חלק ב: רכיב הריבוע (ללא שינוי)
+// --------------------------------------------------------
 const InstagramSquare = ({ images, delay }: { images: string[], delay: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // השהיה התחלתית כדי שהריבועים לא יתחלפו בדיוק באותו זמן
     const startTimeout = setTimeout(() => {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -26,7 +51,6 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
       rel="noopener noreferrer"
       className="group relative w-full aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gray-100"
     >
-      {/* תמונות מתחלפות */}
       {images.map((src, index) => (
         <img
           key={index}
@@ -46,37 +70,24 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
   );
 };
 
+// --------------------------------------------------------
+// חלק ג: הקומפוננטה הראשית
+// --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
-  // מאגרי תמונות (Placeholders איכותיים המדמים את הפעילות: חיילים, מנגל, חברים, שמחה)
-  const feed1 = [
-    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=600&fit=crop", // BBQ
-    "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&h=600&fit=crop", // Friends
-    "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=600&fit=crop"  // Community
-  ];
   
-  const feed2 = [
-    "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&h=600&fit=crop", // People
-    "https://images.unsplash.com/photo-1533227297464-94754543d343?w=600&h=600&fit=crop", // Party
-    "https://images.unsplash.com/photo-1561489413-985b06da5bee?w=600&h=600&fit=crop"  // Happy
-  ];
+  // הגדרת המערכים עם המשתנים שייבאנו למעלה
+  const feed1 = [bbq1, bbq2, bbq3];
+  const feed2 = [friend1, friend2, friend3];
+  const feed3 = [sol1, sol2, sol3];
   
-  const feed3 = [
-    "https://images.unsplash.com/photo-1472653431158-6364773b2a56?w=600&h=600&fit=crop", // Happy Group
-    "https://images.unsplash.com/photo-1511632765486-a01980968a0c?w=600&h=600&fit=crop", // Crowd
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=600&fit=crop"  // Team
-  ];
-  
-  const feed4 = [
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=600&fit=crop", // Hug/Friends
-    "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=600&fit=crop", // School/Teaching (volunteering)
-    "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=600&fit=crop"  // Volunteers
-  ];
+  // ריבוע רביעי - מיקס (או שתייבא תמונות נוספות אם יש)
+  const feed4 = [friend2, sol1, bbq3]; 
 
   return (
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
       {/* Donation CTA */}
       <div className="text-center mb-16 animate-fade-in-up">
-        {/* Hugging Hearts Image */}
+        {/* גם את הלוגו מומלץ להחליף לתמונה מקומית אם יש לך */}
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/535b6f6e779f3deaaee5d4ebfadae88f4f44df76?placeholderIfAbsent=true"
           className="w-64 md:w-80 mx-auto mb-8 object-contain"
@@ -104,6 +115,7 @@ export const JoinUsSection: React.FC = () => {
         
         {/* Grid of 4 squares */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
+          {/* שימוש במשתנים המקומיים */}
           <InstagramSquare images={feed1} delay={0} />
           <InstagramSquare images={feed2} delay={1000} />
           <InstagramSquare images={feed3} delay={2000} />
