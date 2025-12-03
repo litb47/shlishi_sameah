@@ -17,9 +17,9 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "vite-env.d.ts"
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
