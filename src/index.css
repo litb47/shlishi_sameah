@@ -1,24 +1,9 @@
 /* ============================================
-   הגדרות הפונטים המקומיים
+   CSS נקי ללא פונטים מקומיים
+   
+   הפונט bunotza.ttf פגום, אז אנחנו משתמשים
+   רק ב-Google Fonts
    ============================================ */
-
-/* פונט 1: BuNotza - כתב יד ל"מחזירים אהבה" */
-@font-face {
-  font-family: 'BuNotza';
-  src: url('/fonts/bunotza.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* פונט 2: NotoSans - פונט בולד ל"לגיבורים" */
-@font-face {
-  font-family: 'NotoSans';
-  src: url('/fonts/NotoSans.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* ============================================
    הגדרות בסיס
@@ -38,13 +23,13 @@ body {
 
 /* כתב יד - "מחזירים אהבה" */
 .font-yad {
-  font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
+  font-family: 'Rubik Marker Hatch', cursive;
   font-weight: normal; 
 }
 
 /* בולד - "לגיבורים" */
 .font-frank {
-  font-family: 'NotoSans', 'Frank Ruhl Libre', serif;
+  font-family: 'Secular One', 'Frank Ruhl Libre', sans-serif;
   font-weight: 700;
 }
 
