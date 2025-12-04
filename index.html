@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>שלישי שמח</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שלישי שמח - מחזירים אהבה לגיבורים</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* ===== FONT DECLARATIONS ===== */
     
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    /* BuNotza Font - לכיתוב "מחזירים אהבה" */
+    @font-face {
+      font-family: 'BuNotza';
+      src: url('/fonts/buNotza.woff2') format('woff2'),
+           url('/fonts/bunotza.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     
-    <!-- Google Fonts (גיבויים) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet" />
+    /* NotoSans Font - לכיתוב "לגיבורים" */
+    @font-face {
+      font-family: 'NotoSans';
+      src: url('/fonts/NotoSans.woff2') format('woff2'),
+           url('/fonts/NotoSans.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ===== FONT UTILITY CLASSES ===== */
     
-    <style>
-      /* ============================================
-         הגדרת הפונטים המקומיים
-         ============================================ */
-      
-      /* פונט 1: BuNotza - כתב יד ל"מחזירים אהבה" */
-      @font-face {
-        font-family: 'BuNotza';
-        src: url('/fonts/bunotza.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
+    .font-yad {
+      font-family: 'BuNotza', 'Rubik', Arial, sans-serif;
+    }
+    
+    .font-frank {
+      font-family: 'NotoSans', 'Assistant', Arial, sans-serif;
+      font-weight: 700;
+    }
 
-      /* פונט 2: NotoSans - פונט בולד ל"לגיבורים" */
-      @font-face {
-        font-family: 'NotoSans';
-        src: url('/fonts/NotoSans.ttf') format('truetype');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
+    /* ===== ANIMATIONS ===== */
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      /* ============================================
-         הגדרות בסיס
-         ============================================ */
-      
-      body {
-        font-family: "Rubik", sans-serif;
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
       }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-      /* ============================================
-         המחלקות המיוחדות לפונטים
-         ============================================ */
+    .animate-fadeInUp {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
 
-      /* כתב יד - "מחזירים אהבה" */
-      .font-yad {
-        font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
-        font-weight: normal; 
-      }
+    .animate-scaleIn {
+      animation: scaleIn 0.5s ease-out forwards;
+    }
 
-      /* בולד - "לגיבורים" */
-      .font-frank {
-        font-family: 'NotoSans', 'Frank Ruhl Libre', serif;
-        font-weight: 700;
-      }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-      /* ============================================
-         אנימציות
-         ============================================ */
-      
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
-      .animate-fade-in-up {
-        animation: fadeInUp 0.6s ease-out forwards;
-      }
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
 
-      @keyframes scaleIn {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
-      }
-      
-      .animate-scale-in {
-        animation: scaleIn 0.5s ease-out forwards;
-      }
-       
-      .hover-lift {
-        transition: transform 0.3s ease;
-      }
-      
-      .hover-lift:hover {
-        transform: translateY(-5px);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-  </body>
+    /* ===== GLOBAL STYLES ===== */
+    
+    body {
+      font-family: 'Rubik', 'Assistant', Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-pink-50">
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
 </html>
