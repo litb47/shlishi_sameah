@@ -3,26 +3,27 @@ import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// ייבוא התמונות מהתיקייה המקומית
+// נתיבים לתמונות מתיקיית public
+// (לא צריך import - פשוט נתיבים!)
 // --------------------------------------------------------
 
 // קבוצה 1: BBQ
-import bbq1 from '../assets/instagram/bbq1.jpg';
-import bbq2 from '../assets/instagram/bbq2.jpg';
-import bbq3 from '../assets/instagram/bbq3.jpg';
+const bbq1 = '/instagram/bbq1.jpg';
+const bbq2 = '/instagram/bbq2.jpg';
+const bbq3 = '/instagram/bbq3.jpg';
 
 // קבוצה 2: Friends
-import friends1 from '../assets/instagram/friends1.jpg';
-import friends2 from '../assets/instagram/friends2.jpg';
-import friends3 from '../assets/instagram/friends3.jpg';
+const friends1 = '/instagram/friends1.jpg';
+const friends2 = '/instagram/friends2.jpg';
+const friends3 = '/instagram/friends3.jpg';
 
 // קבוצה 3: Soldiers
-import sol1 from '../assets/instagram/sol1.jpg';
-import sol2 from '../assets/instagram/sol2.jpg';
-import sol3 from '../assets/instagram/sol3.jpg';
+const sol1 = '/instagram/sol1.jpg';
+const sol2 = '/instagram/sol2.jpg';
+const sol3 = '/instagram/sol3.jpg';
 
 // --------------------------------------------------------
-// רכיב הריבוע עם החלפת תמונות (ללא לינק!)
+// רכיב הריבוע עם החלפת תמונות
 // --------------------------------------------------------
 const InstagramSquare = ({ images, delay }: { images: string[], delay: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,7 +32,7 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
     const startTimeout = setTimeout(() => {
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
-      }, 3500); // החלפה כל 3.5 שניות
+      }, 3500);
 
       return () => clearInterval(interval);
     }, delay);
@@ -49,10 +50,6 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
-          onError={(e) => {
-            console.error('Failed to load image:', src);
-            e.currentTarget.style.display = 'none';
-          }}
         />
       ))}
     </div>
@@ -64,15 +61,6 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
   
-  // בדיקה שהתמונות נטענו
-  useEffect(() => {
-    console.log('Image paths:', {
-      bbq1,
-      friends1,
-      sol1
-    });
-  }, []);
-
   // הגדרת 4 המערכים של התמונות
   const feed1 = [bbq1, bbq2, bbq3];
   const feed2 = [friends1, friends2, friends3];
