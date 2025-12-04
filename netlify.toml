@@ -1,0 +1,18 @@
+[[headers]]
+  # הגדרות לטעינת פונטים
+  for = "/fonts/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  # הגדרות כלליות
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+
+[build]
+  command = "npm run build"
+  publish = "dist"
