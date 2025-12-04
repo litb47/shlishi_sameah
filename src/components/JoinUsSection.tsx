@@ -22,7 +22,7 @@ import sol2 from '../assets/instagram/sol2.jpg';
 import sol3 from '../assets/instagram/sol3.jpg';
 
 // --------------------------------------------------------
-// רכיב הריבוע עם החלפת תמונות
+// רכיב הריבוע עם החלפת תמונות (ללא לינק!)
 // --------------------------------------------------------
 const InstagramSquare = ({ images, delay }: { images: string[], delay: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,12 +40,7 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
   }, [images.length, delay]);
 
   return (
-    <a
-      href="https://www.instagram.com/shlishi_sameach/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative w-full aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gray-100"
-    >
+    <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200">
       {images.map((src, index) => (
         <img
           key={index}
@@ -54,14 +49,13 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
+          onError={(e) => {
+            console.error('Failed to load image:', src);
+            e.currentTarget.style.display = 'none';
+          }}
         />
       ))}
-      
-      {/* שכבת כהות ואייקון במעבר עכבר */}
-      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-        <Instagram className="text-white w-10 h-10 opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300" />
-      </div>
-    </a>
+    </div>
   );
 };
 
@@ -70,6 +64,15 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
   
+  // בדיקה שהתמונות נטענו
+  useEffect(() => {
+    console.log('Image paths:', {
+      bbq1,
+      friends1,
+      sol1
+    });
+  }, []);
+
   // הגדרת 4 המערכים של התמונות
   const feed1 = [bbq1, bbq2, bbq3];
   const feed2 = [friends1, friends2, friends3];
