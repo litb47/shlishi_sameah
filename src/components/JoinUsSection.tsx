@@ -3,21 +3,16 @@ import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// נתיבים לתמונות מתיקיית public
-// (לא צריך import - פשוט נתיבים!)
+// נתיבים פשוטים לתמונות מ-public
 // --------------------------------------------------------
-
-// קבוצה 1: BBQ
 const bbq1 = '/instagram/bbq1.jpg';
 const bbq2 = '/instagram/bbq2.jpg';
 const bbq3 = '/instagram/bbq3.jpg';
 
-// קבוצה 2: Friends
 const friends1 = '/instagram/friends1.jpg';
 const friends2 = '/instagram/friends2.jpg';
 const friends3 = '/instagram/friends3.jpg';
 
-// קבוצה 3: Soldiers
 const sol1 = '/instagram/sol1.jpg';
 const sol2 = '/instagram/sol2.jpg';
 const sol3 = '/instagram/sol3.jpg';
@@ -61,12 +56,9 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
   
-  // הגדרת 4 המערכים של התמונות
   const feed1 = [bbq1, bbq2, bbq3];
   const feed2 = [friends1, friends2, friends3];
   const feed3 = [sol1, sol2, sol3];
-  
-  // ריבוע רביעי - מיקס
   const feed4 = [friends2, sol1, bbq3]; 
 
   return (
