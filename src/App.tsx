@@ -53,3 +53,5 @@ const App: React.FC = () => {
   );
 };
 
+// ✅ זה החלק החשוב - export default!
+export default App;
