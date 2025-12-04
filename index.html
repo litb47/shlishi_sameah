@@ -5,54 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>שלישי שמח</title>
     
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts (גיבויים) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet" />
     
     <style>
-      /* הגדרת הפונט המקומי - BuNotza */
+      /* ============================================
+         הגדרת הפונטים המקומיים
+         ============================================ */
+      
+      /* פונט 1: BuNotza - כתב יד ל"מחזירים אהבה" */
       @font-face {
         font-family: 'BuNotza';
-        /* וודא שהקוד הארוך (Base64) של הפונט BuNotza נמצא כאן */
-        src: url(data:font/truetype;charset=utf-8;base64,Base64:  /* her will be code base 46 */
+        src: url('/fonts/bunotza.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
       }
-   
-      /* הגדרת הפונט NotoSans */
+
+      /* פונט 2: NotoSans - פונט בולד ל"לגיבורים" */
       @font-face {
         font-family: 'NotoSans';
-        /* וודא שהקוד הארוך (Base64) של הפונט NotoSans נמצא כאן */
-        src: url(data:font/truetype;charset=utf-8;base64,Base64: /* her will be code base 46 *
+        src: url('/fonts/NotoSans.ttf') format('truetype');
         font-weight: 700;
         font-style: normal;
         font-display: swap;
       }
 
-      /* הגדרות בסיס */
+      /* ============================================
+         הגדרות בסיס
+         ============================================ */
+      
       body {
         font-family: "Rubik", sans-serif;
       }
 
+      /* ============================================
+         המחלקות המיוחדות לפונטים
+         ============================================ */
+
+      /* כתב יד - "מחזירים אהבה" */
       .font-yad {
         font-family: 'BuNotza', 'Rubik Marker Hatch', cursive;
         font-weight: normal; 
       }
 
+      /* בולד - "לגיבורים" */
       .font-frank {
-        font-family: 'NotoSans', sans-serif;
+        font-family: 'NotoSans', 'Frank Ruhl Libre', serif;
         font-weight: 700;
       }
 
-      /* אנימציות */
+      /* ============================================
+         אנימציות
+         ============================================ */
+      
       @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
       }
+      
       .animate-fade-in-up {
         animation: fadeInUp 0.6s ease-out forwards;
       }
@@ -61,15 +77,17 @@
         from { opacity: 0; transform: scale(0.9); }
         to { opacity: 1; transform: scale(1); }
       }
+      
       .animate-scale-in {
         animation: scaleIn 0.5s ease-out forwards;
       }
        
       .hover-lift {
-          transition: transform 0.3s ease;
+        transition: transform 0.3s ease;
       }
+      
       .hover-lift:hover {
-          transform: translateY(-5px);
+        transform: translateY(-5px);
       }
     </style>
   </head>
