@@ -3,31 +3,26 @@ import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// חלק א: ייבוא התמונות מהתיקייה המקומית
+// ייבוא התמונות מהתיקייה המקומית
 // --------------------------------------------------------
 
-// קבוצה 1: על האש (BBQ)
+// קבוצה 1: BBQ
 import bbq1 from '../assets/instagram/bbq1.jpg';
 import bbq2 from '../assets/instagram/bbq2.jpg';
 import bbq3 from '../assets/instagram/bbq3.jpg';
 
-// קבוצה 2: חברים/קהילה (Friends)
-// (הנחתי שהשמות הם friends1, friends2 וכו' לפי הצילום מסך)
-import friend1 from '../assets/instagram/friends1.jpg';
-import friend2 from '../assets/instagram/friends2.jpg';
-import friend3 from '../assets/instagram/friends3.jpg';
+// קבוצה 2: Friends
+import friends1 from '../assets/instagram/friends1.jpg';
+import friends2 from '../assets/instagram/friends2.jpg';
+import friends3 from '../assets/instagram/friends3.jpg';
 
-// קבוצה 3: חיילים (Soldiers)
+// קבוצה 3: Soldiers
 import sol1 from '../assets/instagram/sol1.jpg';
 import sol2 from '../assets/instagram/sol2.jpg';
 import sol3 from '../assets/instagram/sol3.jpg';
 
-// הערה: אם יש לך עוד תמונות לקבוצה 4, תייבא אותן כאן.
-// בינתיים יצרתי מיקס מהתמונות הקיימות עבור הריבוע הרביעי.
-
-
 // --------------------------------------------------------
-// חלק ב: רכיב הריבוע (ללא שינוי)
+// רכיב הריבוע עם החלפת תמונות
 // --------------------------------------------------------
 const InstagramSquare = ({ images, delay }: { images: string[], delay: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,7 +50,7 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
         <img
           key={index}
           src={src}
-          alt="Instagram moment"
+          alt={`Instagram moment ${index + 1}`}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
@@ -71,23 +66,22 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
 };
 
 // --------------------------------------------------------
-// חלק ג: הקומפוננטה הראשית
+// הקומפוננטה הראשית
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
   
-  // הגדרת המערכים עם המשתנים שייבאנו למעלה
+  // הגדרת 4 המערכים של התמונות
   const feed1 = [bbq1, bbq2, bbq3];
-  const feed2 = [friend1, friend2, friend3];
+  const feed2 = [friends1, friends2, friends3];
   const feed3 = [sol1, sol2, sol3];
   
-  // ריבוע רביעי - מיקס (או שתייבא תמונות נוספות אם יש)
-  const feed4 = [friend2, sol1, bbq3]; 
+  // ריבוע רביעי - מיקס
+  const feed4 = [friends2, sol1, bbq3]; 
 
   return (
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
       {/* Donation CTA */}
       <div className="text-center mb-16 animate-fade-in-up">
-        {/* גם את הלוגו מומלץ להחליף לתמונה מקומית אם יש לך */}
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/535b6f6e779f3deaaee5d4ebfadae88f4f44df76?placeholderIfAbsent=true"
           className="w-64 md:w-80 mx-auto mb-8 object-contain"
@@ -113,16 +107,15 @@ export const JoinUsSection: React.FC = () => {
           עקבו אחרינו באינסטגרם
         </h3>
         
-        {/* Grid of 4 squares */}
+        {/* Grid של 4 ריבועים */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-          {/* שימוש במשתנים המקומיים */}
           <InstagramSquare images={feed1} delay={0} />
           <InstagramSquare images={feed2} delay={1000} />
           <InstagramSquare images={feed3} delay={2000} />
           <InstagramSquare images={feed4} delay={500} />
         </div>
 
-        {/* Styled Button */}
+        {/* כפתור אינסטגרם */}
         <a
           href="https://www.instagram.com/shlishi_sameach/"
           target="_blank"
