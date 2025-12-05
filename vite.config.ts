@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',              // <<< השורה החדשה הקריטית
+  base: './',
   plugins: [react()],
   root: './',
   publicDir: 'public',
@@ -15,9 +15,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name && /\.(jpg|jpeg|png|gif|svg|webp)$/i.test(assetInfo.name)) {
-            return 'assets/[name]-[hash][extname]';
+          const name = assetInfo.name ?? '';
+
+          // לקבצי תמונה – בלי hash בשם
+          if (/\.(jpg|jpeg|png|gif|svg|webp)$/i.test(name)) {
+            return 'assets/[name][extname]';
           }
+
+          // לשאר הקבצים תשאיר hash
           return 'assets/[name]-[hash][extname]';
         },
       },
