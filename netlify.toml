@@ -14,5 +14,5 @@
     Referrer-Policy = "no-referrer-when-downgrade"
 
 [build]
-  command = "npm run build && cp -r public/instagram dist/instagram"
+  command = "npm run build"
   publish = "dist"

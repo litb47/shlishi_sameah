@@ -1,9 +1,14 @@
 import React from 'react';
 import { DonationButton } from './DonationButton';
-import { Instagram, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 export const InstagramSection: React.FC = () => {
-  const instagramPosts = Array(4).fill(null);
+  const instagramPosts = [
+    { src: '/src/assets/instagram/bbq1.jpg', alt: 'BBQ', link: 'https://www.instagram.com/shlishi_ramaach/' },
+    { src: '/src/assets/instagram/sol1.jpg', alt: 'Soldiers', link: 'https://www.instagram.com/shlishi_ramaach/' },
+    { src: '/src/assets/instagram/friends1.jpg', alt: 'Friends', link: 'https://www.instagram.com/shlishi_ramaach/' },
+    { src: '/src/assets/instagram/bbq2.jpg', alt: 'BBQ 2', link: 'https://www.instagram.com/shlishi_ramaach/' },
+  ];
 
   return (
     <section className="py-16 container mx-auto px-6 max-w-7xl">
@@ -34,15 +39,19 @@ export const InstagramSection: React.FC = () => {
           עקבו אחרינו באינסטגרם
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {instagramPosts.map((_, index) => (
+          {instagramPosts.map((post, index) => (
             <a 
               key={index}
-              href="https://instagram.com"
+              href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-card rounded-xl p-8 flex items-center justify-center aspect-square hover-lift shadow-sm border border-border/50"
+              className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200 hover-lift"
             >
-              <Instagram className="w-16 h-16 text-primary/60" />
+              <img 
+                src={post.src} 
+                alt={post.alt} 
+                className="w-full h-full object-cover"
+              />
             </a>
           ))}
         </div>

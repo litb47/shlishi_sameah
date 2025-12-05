@@ -17,12 +17,10 @@ const LegoIcon = () => (
 );
 
 const RibbonIcon = () => (
-  <svg width="100%" height="100%" viewBox="0 0 42 78" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-white drop-shadow-[0_0_10px_#FFD700]">
+  <svg width="100%" height="100%" viewBox="0 0 42 78" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-white">
     <path d="M31.3293 3.8766C39.0875 11.6621 39.5442 23.3748 34.5511 32.7727C32.8251 36.0184 30.4855 38.8869 28.613 42.0392C30.4715 44.226 32.1382 46.5686 33.8712 48.8523C36.8245 52.7416 40.2765 56.9976 41.6468 61.7934C41.9432 62.8315 41.6154 63.2364 41.204 64.1775C39.8023 67.3748 37.5533 71.1291 35.5762 74.0253C35.1822 74.6031 33.3935 77.1775 32.9262 77.3747C32.1243 77.7104 32.4625 76.4751 32.4486 76.0668C32.3893 74.5512 31.8872 72.6585 31.4025 71.2156C29.2163 64.7381 25.189 59.0668 21.0362 53.7104C17.5807 58.1672 14.4217 62.9319 12.1169 68.0876C11.0639 70.4474 10.105 72.9803 9.56452 75.5097C9.49478 75.8315 9.40413 76.9422 9.24722 77.1048C9.17051 77.1844 9.12169 77.2086 9.01012 77.1775C6.37756 73.7865 3.60205 70.4405 1.5518 66.6516C1.16825 65.9492 0.0175945 63.7969 0.000160382 63.1187C-0.0137869 62.5201 0.885814 60.6204 1.18568 59.9803C2.94304 56.2018 5.35592 52.1083 7.91525 48.8177C9.67261 46.5582 11.7054 44.5132 13.285 42.1153C13.3094 41.9838 12.0053 40.181 11.8135 39.8731C6.79947 31.8731 2.81403 25.9215 4.79803 15.9389C6.48914 7.43715 10.2933 0.478681 19.9413 0.0253949C24.2371 -0.175297 28.2539 0.786639 31.3293 3.87314V3.8766ZM31.3502 12.1534C29.9799 11.3922 28.6305 10.7451 27.0963 10.3576C22.0822 9.09112 16.6323 9.22953 11.9321 11.489C11.6531 11.624 10.4223 12.2745 10.3316 12.4752C10.2131 12.7313 10.5583 14.1084 10.6489 14.4821C11.9704 20.0807 16.0396 25.6932 19.5368 30.2191C20.018 30.8419 20.5062 31.4648 21.0327 32.0496C21.1547 32.0496 22.3612 30.3783 22.532 30.1361C24.652 27.1015 26.9463 23.5478 28.6444 20.2745C29.959 17.7347 30.9457 14.9873 31.3502 12.1534Z" />
   </svg>
 );
-
-// --- סוף אזור האייקונים ---
 
 interface ProjectCardProps {
   title: string;
@@ -37,14 +35,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, IconCompo
       className="flex flex-col items-center h-full px-2" 
       style={{ animationDelay: `${delay}ms` }}
     >
-      {/* מיכל כחול לאייקון */}
       <div className="mb-6 w-[84px] h-[84px] shrink-0 bg-[#007aff] rounded-[20px] flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
         <div className="h-10 w-auto">
           <IconComponent />
         </div>
       </div>
 
-      {/* Title Area - RIGHT ALIGNED */}
       <div className="w-full flex justify-center mb-2">
         <h3
             className="text-xl md:text-2xl font-bold text-[#0D245E] leading-tight text-right w-[267px] max-w-full"
@@ -52,7 +48,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, IconCompo
         />
       </div>
 
-      {/* Description - FIXED WIDTH 267px & RIGHT ALIGNED */}
       <div className="w-full flex justify-center">
         <div
             className="
@@ -96,9 +91,7 @@ const ValuesSection: React.FC = () => {
   return (
     <section id="projects" className="scroll-mt-40 py-16 bg-transparent" dir="rtl">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Responsive padding: p-4 on mobile to fit the cards, p-16 on desktop */}
         <div className="bg-[#dbeafe] rounded-[2.5rem] p-4 md:p-16 shadow-sm">
-          {/* Header Section */}
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold text-[#0D245E]">עוטפים את הגיבורים באהבה</h2>
             <p className="text-lg md:text-2xl text-[#0D245E] font-medium max-w-2xl mx-auto [text-wrap:balance]">
@@ -106,7 +99,6 @@ const ValuesSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Cards Grid */}
           <div className="grid md:grid-cols-3 gap-y-12 md:gap-y-16 gap-x-8 md:divide-x md:divide-x-reverse divide-blue-200/50">
             {projects.map((project, index) => (
               <ProjectCard
