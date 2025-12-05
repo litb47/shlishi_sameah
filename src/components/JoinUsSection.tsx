@@ -57,10 +57,10 @@ export const JoinUsSection: React.FC = () => {
         
         {/* Grid של 4 ריבועים - תמונה סטטית בכל אחד */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-          <SimpleImageBox src="/instagram/bbq1.jpg" alt="BBQ" />
-          <SimpleImageBox src="/instagram/friends1.jpg" alt="Friends" />
-          <SimpleImageBox src="/instagram/sol1.jpg" alt="Soldiers" />
-          <SimpleImageBox src="/instagram/bbq2.jpg" alt="BBQ 2" />
+      <SimpleImageBox src="./instagram/bbq1.jpg" alt="BBQ" />
+<SimpleImageBox src="./instagram/friends1.jpg" alt="Friends" />
+<SimpleImageBox src="./instagram/sol1.jpg" alt="Soldiers" />
+<SimpleImageBox src="./instagram/bbq2.jpg" alt="BBQ 2" />
         </div>
 
         {/* כפתור אינסטגרם */}
