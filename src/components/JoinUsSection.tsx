@@ -65,6 +65,7 @@ export const JoinUsSection: React.FC = () => {
 
         {/* כפתור אינסטגרם */}
         
+        
           href="https://www.instagram.com/shlishi_sameach/"
           target="_blank"
           rel="noopener noreferrer"
