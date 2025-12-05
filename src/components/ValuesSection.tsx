@@ -1,51 +1,119 @@
-import React from 'react';
-import { DonationButton } from './DonationButton';
-import { Instagram, CheckCircle } from 'lucide-react';
-import bbq1 from '../assets/instagram/bbq1.jpg';
-import bbq2 from '../assets/instagram/bbq2.jpg';
-import friends1 from '../assets/instagram/friends1.jpg';
-import sol1 from '../assets/instagram/sol1.jpg';
+import React from "react";
 
-const SimpleImageBox = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200">
-    <img src={src} alt={alt} className="w-full h-full object-cover" />
-  </div>
+// --- רכיבי האייקונים ---
+
+const HandIcon = () => (
+  <svg width="100%" height="100%" viewBox="0 0 43 77" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-white">
+    <path d="M39.3963 26.8217C39.3963 27.4984 39.2486 28.1998 38.9656 28.8642L35.6188 36.6283L27.9286 28.3105L29.4543 24.7669C30.5863 22.1337 33.6378 20.9279 36.2587 22.0599C38.215 22.9089 39.3963 24.8161 39.3963 26.8217ZM38.5226 43.1003C38.3504 42.8543 38.1782 42.5958 37.9689 42.3867L35.668 39.8766L35.6312 39.852L17.4946 20.2512C15.5628 18.1472 12.2775 18.0241 10.1735 19.9805C8.08175 21.9123 7.95874 25.1975 9.89046 27.3016L28.4577 47.3699C28.8638 47.8129 28.8391 48.5019 28.3962 48.908C28.187 49.1048 27.9163 49.2032 27.6579 49.2032C27.3626 49.2032 27.0673 49.0802 26.8458 48.8588L12.782 33.6383C11.7484 33.7737 10.7518 34.2043 9.93972 34.9548C8.59851 36.2099 8.06943 37.9694 8.36473 39.6428C8.51238 40.6026 8.94308 41.5254 9.65668 42.2759L20.866 54.408C21.272 54.851 21.2474 55.54 20.8045 55.9583C20.5952 56.1429 20.3246 56.2414 20.0538 56.2414C19.7586 56.2414 19.4756 56.1306 19.2541 55.8968L8.51239 44.2692C7.47886 44.3923 6.48222 44.8352 5.65778 45.6104C4.32897 46.8285 3.79989 48.6127 4.09518 50.2614C4.2305 51.1104 4.57506 51.9225 5.14101 52.6361L13.2742 61.4338C13.6802 61.8767 13.6556 62.5657 13.2126 62.9841C13.0035 63.181 12.7328 63.2671 12.4744 63.2671C12.1791 63.2671 11.8838 63.1564 11.6623 62.9226L4.50124 55.1708C3.46765 55.2939 2.471 55.7369 1.64663 56.512C0.317748 57.7302 -0.223652 59.5143 0.083959 61.1753C0.231604 62.1351 0.662229 63.0579 1.38821 63.8331L7.0113 69.9238C14.7876 78.3153 27.904 78.8198 36.2956 71.0434C44.2565 63.6855 45.0932 51.4918 38.5226 43.1003ZM34.9467 3.23925C34.9326 3.20398 34.9256 3.16876 34.9115 3.1406C33.3827 -0.0228015 29.6908 -0.896432 27.1544 0.977647C25.9567 1.85832 25.2311 2.75312 24.7731 3.38718C24.3151 2.75312 23.5894 1.85832 22.3917 0.977647C19.8554 -0.89642 16.1635 -0.0228015 14.6347 3.1406C14.6206 3.16877 14.6135 3.20399 14.5994 3.23925C13.7751 4.95834 13.9724 6.924 14.6488 8.70648C17.2344 15.5054 23.2161 17.9219 24.7731 17.9219C26.3301 17.9219 32.3117 15.5054 34.8974 8.70648C35.5738 6.924 35.771 4.95834 34.9467 3.23925Z" />
+  </svg>
 );
 
-export const JoinUsSection: React.FC = () => {
+const LegoIcon = () => (
+  <svg width="100%" height="100%" viewBox="0 0 58 70" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-white">
+    <path d="M36.2511 0H21.7507C19.3524 0 17.4006 1.95175 17.4006 4.3501V13.0503C17.4006 13.8507 18.0503 14.5003 18.8507 14.5003H39.1512C39.9516 14.5003 40.6012 13.8507 40.6012 13.0503V4.3501C40.6012 1.95175 38.6494 0 36.2511 0Z" />
+    <path d="M44.9511 58.0015H13.0504C12.25 58.0015 11.6003 58.6511 11.6003 59.4515V68.1517C11.6003 68.9521 12.25 69.6017 13.0504 69.6017H44.9511C45.7516 69.6017 46.4012 68.9521 46.4012 68.1517V59.4515C46.4012 58.6511 45.7516 58.0015 44.9511 58.0015Z" />
+    <path d="M44.9511 11.6003H13.0503C5.85524 11.6003 0 17.4556 0 24.6507V47.8512C0 55.0463 5.85524 60.9015 13.0503 60.9015H44.9511C52.1462 60.9015 58.0014 55.0463 58.0014 47.8512V24.6507C58.0014 17.4556 52.1462 11.6003 44.9511 11.6003ZM17.4004 31.9008C17.4004 30.3029 18.7025 29.0008 20.3005 29.0008C21.8984 29.0008 23.2006 30.3029 23.2006 31.9008C23.2006 33.4988 21.8984 34.8009 20.3005 34.8009C18.7025 34.8009 17.4004 33.4988 17.4004 31.9008ZM39.2553 45.0555C36.4278 47.8802 32.7128 49.2954 29.0007 49.2954C25.2886 49.2954 21.5736 47.8802 18.746 45.0555C18.1805 44.49 18.1805 43.5707 18.746 43.0052C19.3116 42.4397 20.2309 42.4397 20.7964 43.0052C25.3205 47.5293 32.6809 47.5293 37.2021 43.0052C37.7676 42.4397 38.6869 42.4397 39.2524 43.0052C39.818 43.5707 39.8209 44.4871 39.2553 45.0555ZM37.7009 34.8009C36.103 34.8009 34.8008 33.4988 34.8008 31.9008C34.8008 30.3029 36.103 29.0008 37.7009 29.0008C39.2988 29.0008 40.601 30.3029 40.601 31.9008C40.601 33.4988 39.2988 34.8009 37.7009 34.8009Z" />
+  </svg>
+);
+
+const RibbonIcon = () => (
+  <svg width="100%" height="100%" viewBox="0 0 42 78" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-white">
+    <path d="M31.3293 3.8766C39.0875 11.6621 39.5442 23.3748 34.5511 32.7727C32.8251 36.0184 30.4855 38.8869 28.613 42.0392C30.4715 44.226 32.1382 46.5686 33.8712 48.8523C36.8245 52.7416 40.2765 56.9976 41.6468 61.7934C41.9432 62.8315 41.6154 63.2364 41.204 64.1775C39.8023 67.3748 37.5533 71.1291 35.5762 74.0253C35.1822 74.6031 33.3935 77.1775 32.9262 77.3747C32.1243 77.7104 32.4625 76.4751 32.4486 76.0668C32.3893 74.5512 31.8872 72.6585 31.4025 71.2156C29.2163 64.7381 25.189 59.0668 21.0362 53.7104C17.5807 58.1672 14.4217 62.9319 12.1169 68.0876C11.0639 70.4474 10.105 72.9803 9.56452 75.5097C9.49478 75.8315 9.40413 76.9422 9.24722 77.1048C9.17051 77.1844 9.12169 77.2086 9.01012 77.1775C6.37756 73.7865 3.60205 70.4405 1.5518 66.6516C1.16825 65.9492 0.0175945 63.7969 0.000160382 63.1187C-0.0137869 62.5201 0.885814 60.6204 1.18568 59.9803C2.94304 56.2018 5.35592 52.1083 7.91525 48.8177C9.67261 46.5582 11.7054 44.5132 13.285 42.1153C13.3094 41.9838 12.0053 40.181 11.8135 39.8731C6.79947 31.8731 2.81403 25.9215 4.79803 15.9389C6.48914 7.43715 10.2933 0.478681 19.9413 0.0253949C24.2371 -0.175297 28.2539 0.786639 31.3293 3.87314V3.8766ZM31.3502 12.1534C29.9799 11.3922 28.6305 10.7451 27.0963 10.3576C22.0822 9.09112 16.6323 9.22953 11.9321 11.489C11.6531 11.624 10.4223 12.2745 10.3316 12.4752C10.2131 12.7313 10.5583 14.1084 10.6489 14.4821C11.9704 20.0807 16.0396 25.6932 19.5368 30.2191C20.018 30.8419 20.5062 31.4648 21.0327 32.0496C21.1547 32.0496 22.3612 30.3783 22.532 30.1361C24.652 27.1015 26.9463 23.5478 28.6444 20.2745C29.959 17.7347 30.9457 14.9873 31.3502 12.1534Z" />
+  </svg>
+);
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  IconComponent: React.ComponentType;
+  delay?: number;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, IconComponent, delay = 0 }) => {
   return (
-    <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
-      {/* Donation CTA */}
-      <div className="text-center mb-16">
-        {/* ... CTA המקורי ... */}
-        <DonationButton className="mb-4" />
-        <p className="text-sm text-[#0D245E] flex items-center justify-center gap-2">
-          <CheckCircle className="w-4 h-4 text-green-500" />
-          תרומה מוכרת לצרכי מס
-        </p>
+    <div 
+      className="flex flex-col items-center h-full px-2" 
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="mb-6 w-[84px] h-[84px] shrink-0 bg-[#007aff] rounded-[20px] flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
+        <div className="h-10 w-auto">
+          <IconComponent />
+        </div>
       </div>
 
-      {/* Grid */}
-      <div className="text-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-          <SimpleImageBox src={bbq1} alt="BBQ" />
-          <SimpleImageBox src={friends1} alt="Friends" />
-          <SimpleImageBox src={sol1} alt="Soldiers" />
-          <SimpleImageBox src={bbq2} alt="BBQ 2" />
-        </div>
+      <div className="w-full flex justify-center mb-2">
+        <h3
+            className="text-xl md:text-2xl font-bold text-[#0D245E] leading-tight text-right w-[267px] max-w-full"
+            dangerouslySetInnerHTML={{ __html: title }}
+        />
+      </div>
 
-        <a
-          href="https://www.instagram.com/shlishi_sameach/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold text-white rounded-full"
-        >
-          <Instagram className="w-6 h-6" />
-          עקבו אחרינו באינסטגרם
-        </a>
+      <div className="w-full flex justify-center">
+        <div
+            className="
+                text-base font-normal text-[#0D245E] 
+                leading-[22px]                
+                text-right
+                w-[267px] max-w-full
+                mx-auto
+                [text-wrap:balance]
+                [&_span]:block             
+                [&_span]:mt-4              
+                [&_span]:font-bold
+                [&_span]:text-right
+            "
+            dangerouslySetInnerHTML={{ __html: description }}
+        />
+      </div>
+    </div>
+  );
+};
+
+const ValuesSection: React.FC = () => {
+  const projects = [
+    {
+      title: "כל מה שהגיבורים צריכים",
+      IconComponent: HandIcon,
+      description: `אנחנו לא מסתפקים רק במנגלים. אנחנו עוטפים את החיילים בכל מה שהם צריכים - ביגוד איכותי, ספרי לימוד לאחים הקטנים, ציוד אישי, וכל בקשה שעולה מהלב.<span class="text-[#0D245E]">כי לגיבורים שלנו מגיע הכל. ואנחנו כאן בשבילם.</span>`,
+    },
+    {
+      title: `פרויקט הלגו ע"ש<br />בצלאל מסבכר הי"ד`,
+      IconComponent: LegoIcon,
+      description: `הוקם באפריל 2025 לזכרו של בצלאל הי"ד. אנחנו רוכשים דגמי לגו יוקרתיים (2,500+ ש"ח) לפי הזמנה אישית של המשתקמים - כי הרכבת לגו היא לא רק תחביב, זו טיפול, ריכוז ושקט נפשי.<span class="text-[#0D245E]">עד כה חילקנו מעל 200 דגמים, ואנחנו ממשיכים!</span>`,
+    },
+    {
+      title: "השבויים ששבו אלינו",
+      IconComponent: RibbonIcon,
+      description: `פעילות שקטה ומתחת לרדאר במתחם השבים באיכילוב. אנחנו עובדים בשקט - מאבזרים דירות, מספקים קונסולות משחק, מנגלים מקצועיים למשפחות, וכל מה שצריך כדי להעלות חיוך על הפנים של מי שעבר את הבלתי נתפס.<span class="text-[#0D245E]">המטרה שלנו: לתת להם תחושה של בית, של נורמליות, של חיוך.</span>`,
+    },
+  ];
+
+  return (
+    <section id="projects" className="scroll-mt-40 py-16 bg-transparent" dir="rtl">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="bg-[#dbeafe] rounded-[2.5rem] p-4 md:p-16 shadow-sm">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0D245E]">עוטפים את הגיבורים באהבה</h2>
+            <p className="text-lg md:text-2xl text-[#0D245E] font-medium max-w-2xl mx-auto [text-wrap:balance]">
+              הפרויקטים שלנו נועדו להחזיר חיוך לפנים של מי שנתן הכל
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-y-12 md:gap-y-16 gap-x-8 md:divide-x md:divide-x-reverse divide-blue-200/50">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                IconComponent={project.IconComponent}
+                delay={index * 100}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default JoinUsSection;
+export default ValuesSection;
