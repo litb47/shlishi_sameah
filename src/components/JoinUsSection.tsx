@@ -1,60 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// ייבוא התמונות מהתיקייה המקומית
+// קומפוננטה פשוטה - תמונה בודדת ללא אנימציה
 // --------------------------------------------------------
-
-// קבוצה 1: BBQ
-import bbq1 from '../assets/instagram/bbq1.jpg';
-import bbq2 from '../assets/instagram/bbq2.jpg';
-import bbq3 from '../assets/instagram/bbq3.jpg';
-
-// קבוצה 2: Friends
-import friends1 from '../assets/instagram/friends1.jpg';
-import friends2 from '../assets/instagram/friends2.jpg';
-import friends3 from '../assets/instagram/friends3.jpg';
-
-// קבוצה 3: Soldiers
-import sol1 from '../assets/instagram/sol1.jpg';
-import sol2 from '../assets/instagram/sol2.jpg';
-import sol3 from '../assets/instagram/sol3.jpg';
-
-// --------------------------------------------------------
-// רכיב הריבוע עם החלפת תמונות (ללא לינק!)
-// --------------------------------------------------------
-const InstagramSquare = ({ images, delay }: { images: string[], delay: number }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const startTimeout = setTimeout(() => {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
-      }, 3500); // החלפה כל 3.5 שניות
-
-      return () => clearInterval(interval);
-    }, delay);
-
-    return () => clearTimeout(startTimeout);
-  }, [images.length, delay]);
-
+const SimpleImageBox = ({ src, alt }: { src: string; alt: string }) => {
   return (
     <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200">
-      {images.map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`Instagram moment ${index + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-          onError={(e) => {
-            console.error('Failed to load image:', src);
-            e.currentTarget.style.display = 'none';
-          }}
-        />
-      ))}
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-cover"
+        onError={(e) => {
+          console.error('Failed to load:', src);
+          e.currentTarget.style.backgroundColor = '#f3f4f6';
+        }}
+      />
     </div>
   );
 };
@@ -64,23 +26,6 @@ const InstagramSquare = ({ images, delay }: { images: string[], delay: number })
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
   
-  // בדיקה שהתמונות נטענו
-  useEffect(() => {
-    console.log('Image paths:', {
-      bbq1,
-      friends1,
-      sol1
-    });
-  }, []);
-
-  // הגדרת 4 המערכים של התמונות
-  const feed1 = [bbq1, bbq2, bbq3];
-  const feed2 = [friends1, friends2, friends3];
-  const feed3 = [sol1, sol2, sol3];
-  
-  // ריבוע רביעי - מיקס
-  const feed4 = [friends2, sol1, bbq3]; 
-
   return (
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
       {/* Donation CTA */}
@@ -110,12 +55,12 @@ export const JoinUsSection: React.FC = () => {
           עקבו אחרינו באינסטגרם
         </h3>
         
-        {/* Grid של 4 ריבועים */}
+        {/* Grid של 4 ריבועים - תמונה סטטית בכל אחד */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-          <InstagramSquare images={feed1} delay={0} />
-          <InstagramSquare images={feed2} delay={1000} />
-          <InstagramSquare images={feed3} delay={2000} />
-          <InstagramSquare images={feed4} delay={500} />
+          <SimpleImageBox src="/instagram/bbq1.jpg" alt="BBQ" />
+          <SimpleImageBox src="/instagram/friends1.jpg" alt="Friends" />
+          <SimpleImageBox src="/instagram/sol1.jpg" alt="Soldiers" />
+          <SimpleImageBox src="/instagram/bbq2.jpg" alt="BBQ 2" />
         </div>
 
         {/* כפתור אינסטגרם */}
