@@ -2,11 +2,14 @@ import React from 'react';
 import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
-// ייבוא התמונות מ-src/assets/instagram
-import bbq1 from '../assets/instagram/bbq1.jpg';
-import bbq2 from '../assets/instagram/bbq2.jpg';
-import friends1 from '../assets/instagram/friends1.jpg';
-import sol1 from '../assets/instagram/sol1.jpg';
+// מחקו את שורות ה-import של התמונות:
+   // import bbq1 from '../assets/instagram/bbq1.jpg';  ← מחקו
+   
+   // ובמקום זה, השתמשו בנתיבים ישירים:
+   <SimpleImageBox src="/instagram/bbq1.jpg" alt="BBQ" />
+   <SimpleImageBox src="/instagram/friends1.jpg" alt="Friends" />
+   <SimpleImageBox src="/instagram/sol1.jpg" alt="Soldiers" />
+   <SimpleImageBox src="/instagram/bbq2.jpg" alt="BBQ 2" />
 
 // --------------------------------------------------------
 // קומפוננטה פשוטה - תמונה בודדת ללא אנימציה
