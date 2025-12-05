@@ -66,7 +66,7 @@ export const JoinUsSection: React.FC = () => {
         {/* כפתור אינסטגרם */}
         
         
-          href="https://www.instagram.com/shlishi_sameach/"
+         <a href="https://www.instagram.com/shlishi_sameach/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold text-white transition-all transform bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full hover:scale-105 hover:shadow-lg shadow-md"
