@@ -17,7 +17,7 @@ export const JoinUsSection: React.FC = () => {
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
       {/* Donation CTA */}
       <div className="text-center mb-16">
-        {/* ... */}
+        {/* ... CTA המקורי ... */}
         <DonationButton className="mb-4" />
         <p className="text-sm text-[#0D245E] flex items-center justify-center gap-2">
           <CheckCircle className="w-4 h-4 text-green-500" />
@@ -47,4 +47,5 @@ export const JoinUsSection: React.FC = () => {
     </section>
   );
 };
-export default ValuesSection;
+
+export default JoinUsSection;
