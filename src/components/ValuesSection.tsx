@@ -47,3 +47,4 @@ export const JoinUsSection: React.FC = () => {
     </section>
   );
 };
+export default ValuesSection;
