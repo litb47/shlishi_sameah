@@ -1,10 +1,6 @@
 import React from 'react';
 import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
-import bbq1 from '../assets/instagram/bbq1.jpg';
-import bbq2 from '../assets/instagram/bbq2.jpg';
-import friends1 from '../assets/instagram/friends1.jpg';
-import sol1 from '../assets/instagram/sol1.jpg';
 
 const SimpleImageBox = ({ src, alt }: { src: string; alt: string }) => (
   <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200">
@@ -15,9 +11,20 @@ const SimpleImageBox = ({ src, alt }: { src: string; alt: string }) => (
 export const JoinUsSection: React.FC = () => {
   return (
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
-      {/* Donation CTA */}
+      {/* Donation CTA – בדיוק כמו קודם, רק בלי לגעת בעיצוב */}
       <div className="text-center mb-16">
-        {/* כאן תחזיר את כל ה־CTA המקורי שהיה לך (לוגו, כותרת, טקסט וכו') */}
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/535b6f6e779f3deaaee5d4ebfadae88f4f44df76?placeholderIfAbsent=true"
+          className="w-64 md:w-80 mx-auto mb-8 object-contain"
+          alt="לוגו דקורטיבי"
+        />
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#0D245E] mb-4">
+          הצטרפו אלינו לשמח את הגיבורים
+        </h2>
+        <p className="text-lg text-[#0D245E] max-w-xl mx-auto mb-6 leading-relaxed">
+          כל תרומה, קטנה כגדולה, מאפשרת לנו להמשיך לעטוף את
+          החיילים שלנו באהבה. תרמו עכשיו ותהיו חלק מהמעגל הזה.
+        </p>
         <DonationButton className="mb-4" />
         <p className="text-sm text-[#0D245E] flex items-center justify-center gap-2">
           <CheckCircle className="w-4 h-4 text-green-500" />
@@ -25,15 +32,16 @@ export const JoinUsSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Grid */}
+      {/* Grid של 4 תמונות מה-public/instagram */}
       <div className="text-center">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-          <SimpleImageBox src={bbq1} alt="BBQ" />
-          <SimpleImageBox src={friends1} alt="Friends" />
-          <SimpleImageBox src={sol1} alt="Soldiers" />
-          <SimpleImageBox src={bbq2} alt="BBQ 2" />
+          <SimpleImageBox src="/instagram/bbq1.jpg" alt="BBQ" />
+          <SimpleImageBox src="/instagram/friends1.jpg" alt="Friends" />
+          <SimpleImageBox src="/instagram/sol1.jpg" alt="Soldiers" />
+          <SimpleImageBox src="/instagram/bbq2.jpg" alt="BBQ 2" />
         </div>
 
+        {/* כפתור אינסטגרם – פעם אחת בלבד */}
         <a
           href="https://www.instagram.com/shlishi_sameach/"
           target="_blank"
