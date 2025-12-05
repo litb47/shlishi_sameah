@@ -2,15 +2,6 @@ import React from 'react';
 import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
-// מחקו את שורות ה-import של התמונות:
-   // import bbq1 from '../assets/instagram/bbq1.jpg';  ← מחקו
-   
-   // ובמקום זה, השתמשו בנתיבים ישירים:
-   <SimpleImageBox src="/instagram/bbq1.jpg" alt="BBQ" />
-   <SimpleImageBox src="/instagram/friends1.jpg" alt="Friends" />
-   <SimpleImageBox src="/instagram/sol1.jpg" alt="Soldiers" />
-   <SimpleImageBox src="/instagram/bbq2.jpg" alt="BBQ 2" />
-
 // --------------------------------------------------------
 // קומפוננטה פשוטה - תמונה בודדת ללא אנימציה
 // --------------------------------------------------------
@@ -66,14 +57,14 @@ export const JoinUsSection: React.FC = () => {
         
         {/* Grid של 4 ריבועים - תמונה סטטית בכל אחד */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-          <SimpleImageBox src={bbq1} alt="BBQ" />
-          <SimpleImageBox src={friends1} alt="Friends" />
-          <SimpleImageBox src={sol1} alt="Soldiers" />
-          <SimpleImageBox src={bbq2} alt="BBQ 2" />
+          <SimpleImageBox src="/instagram/bbq1.jpg" alt="BBQ" />
+          <SimpleImageBox src="/instagram/friends1.jpg" alt="Friends" />
+          <SimpleImageBox src="/instagram/sol1.jpg" alt="Soldiers" />
+          <SimpleImageBox src="/instagram/bbq2.jpg" alt="BBQ 2" />
         </div>
 
         {/* כפתור אינסטגרם */}
-        <a
+        
           href="https://www.instagram.com/shlishi_sameach/"
           target="_blank"
           rel="noopener noreferrer"
