@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         {/* צד ימין - טקסט */}
         <div className="order-2 lg:order-1 text-right animate-fade-in-up">
-          <h1 className="text-2xl md:text-3xl font-semibold text-[#0D245E] mb-4">
+          <h1 className="text-2xl md:text-3xl font-semibold text-[#0D245E] mb-2">
             שלישי שמח לחיילים שלנו!
           </h1>
 
