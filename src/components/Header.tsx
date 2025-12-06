@@ -1,6 +1,6 @@
 import React from 'react';
 import { DonationButton } from './DonationButton';
-import { Image as ImageIcon } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 interface HeaderProps {
   onNavigate: (view: 'landing' | 'gallery', sectionId?: string) => void;
@@ -36,13 +36,16 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             </button>
           </nav>
           
-          {/* כפתור גלריה למובייל (אייקון בלבד) */}
-          <button 
-            onClick={() => onNavigate('landing', 'gallery')}
-            className="md:hidden text-[#0D245E] hover:text-[#007aff] p-2 focus:outline-none"
+          {/* אייקון אינסטגרם למובייל - קישור ישיר לאינסטגרם */}
+          <a 
+            href="https://www.instagram.com/shlishi_sameach/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden text-[#0D245E] hover:text-[#007aff] p-2 focus:outline-none transition-colors"
+            title="עקבו אחרינו באינסטגרם"
           >
-            <ImageIcon className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
+            <Instagram className="w-5 h-5 md:w-6 md:h-6" />
+          </a>
         </div>
         
         {/* לוגו - לחיצה עליו מחזירה לדף הבית */}
