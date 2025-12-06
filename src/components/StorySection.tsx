@@ -27,7 +27,7 @@ const StorySection: React.FC = () => {
           </span>
         </>
       ),
-      img: `${import.meta.env.BASE_URL}instagram/34.jpg`,
+      img: `${import.meta.env.BASE_URL}instagram/61.jpg`,
       reverse: false
     }
   ];
