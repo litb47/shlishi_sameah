@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
               </span>
               
               {/* מילה שניה: Frank */}
-              <span className="font-frank text-5xl md:text-6xl lg:text-7xl block">
+              <span className="font-frank text-5xl md:text-6xl lg:text-7xl block -mt-4">
                 לגיבורים
               </span>
             </h2>
