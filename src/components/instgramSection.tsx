@@ -3,13 +3,15 @@ import { DonationButton } from './DonationButton';
 import { CheckCircle } from 'lucide-react';
 
 export const InstagramSection: React.FC = () => {
-  const instagramPosts = [
-    { src: '/src/assets/instagram/bbq1.jpg', alt: 'BBQ', link: 'https://www.instagram.com/shlishi_ramaach/' },
-    { src: '/src/assets/instagram/sol1.jpg', alt: 'Soldiers', link: 'https://www.instagram.com/shlishi_ramaach/' },
-    { src: '/src/assets/instagram/friends1.jpg', alt: 'Friends', link: 'https://www.instagram.com/shlishi_ramaach/' },
-    { src: '/src/assets/instagram/bbq2.jpg', alt: 'BBQ 2', link: 'https://www.instagram.com/shlishi_ramaach/' },
-  ];
-
+   
+    const instagramPosts = [
+      { src: '/instagram/bbq1.jpg', alt: 'BBQ', link: 'https://www.instagram.com/shlishi_ramaach/' },
+      { src: '/instagram/sol1.jpg', alt: 'Soldiers', link: 'https://www.instagram.com/shlishi_ramaach/' },
+      { src: '/instagram/friends1.jpg', alt: 'Friends', link: 'https://www.instagram.com/shlishi_ramaach/' },
+      { src: '/instagram/bbq2.jpg', alt: 'BBQ 2', link: 'https://www.instagram.com/shlishi_ramaach/' },
+    ];
+    
+  
   return (
     <section className="py-16 container mx-auto px-6 max-w-7xl">
       {/* Donation CTA */}
