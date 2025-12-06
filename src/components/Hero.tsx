@@ -17,12 +17,12 @@ export const Hero: React.FC = () => {
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         {/* צד ימין - טקסט */}
         <div className="order-2 lg:order-1 text-right animate-fade-in-up">
-          <h1 className="text-2xl md:text-3xl font-semibold text-[#0D245E] mb-2">
+          <h1 className="text-2xl md:text-3xl font-semibold text-[#0D245E] mb-0">
             שלישי שמח לחיילים שלנו!
           </h1>
 
           {/* --- כאן השינוי של הפונטים --- */}
-          <div className="mb-8">
+          <div className="mb-0">
             <h2 className="text-[#0D245E] leading-tight">
               {/* מילה ראשונה: BuNotza */}
               <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
               </span>
               
               {/* מילה שניה: Frank */}
-              <span className="font-frank text-5xl md:text-6xl lg:text-7xl mt-2 block">
+              <span className="font-frank text-5xl md:text-6xl lg:text-7xl block">
                 לגיבורים
               </span>
             </h2>
