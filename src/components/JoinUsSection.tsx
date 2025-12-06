@@ -3,36 +3,45 @@ import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// קומפוננטה לתמונות שמתחלפות
+// קומפוננטה לתמונות שמתחלפות עם לוגיקה שלא חוזרות
 // --------------------------------------------------------
 const RotatingImageBox = ({ 
-  category, 
-  alt 
+  boxIndex,
+  allCurrentImages
 }: { 
-  category: 'bbq' | 'friends' | 'sol'; 
-  alt: string;
+  boxIndex: number;
+  allCurrentImages: number[];
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // כל קטגוריה יכולה להכיל עד 3 תמונות
-  const totalImages = 3;
+  const [currentImageIndex, setCurrentImageIndex] = useState(boxIndex);
+  
+  const totalImages = 6;
+  const imageNames = ['bbq1', 'bbq2', 'bbq3', 'friends1', 'friends2', 'sol1'];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalImages);
+      setCurrentImageIndex((prev) => {
+        let next = (prev + 1) % totalImages;
+        
+        // דלג על תמונות שכבר מוצגות בקופסאות אחרות
+        while (allCurrentImages.includes(next) && next !== prev) {
+          next = (next + 1) % totalImages;
+        }
+        
+        return next;
+      });
     }, 3000); // החלפה כל 3 שניות
 
     return () => clearInterval(interval);
-  }, []);
+  }, [allCurrentImages]);
 
-  const imageNumber = currentIndex + 1;
-  const src = `${import.meta.env.BASE_URL}instagram/${category}${imageNumber}.jpg`;
+  const imageName = imageNames[currentImageIndex];
+  const src = `${import.meta.env.BASE_URL}instagram/${imageName}.jpg`;
 
   return (
     <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200">
       <img
         src={src}
-        alt={`${alt} ${imageNumber}`}
+        alt={imageName}
         className="w-full h-full object-cover"
         onError={(e) => {
           console.error('Failed to load:', src);
@@ -47,6 +56,19 @@ const RotatingImageBox = ({
 // הקומפוננטה הראשית
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
+  const [allCurrentImages, setAllCurrentImages] = useState<number[]>([0, 1, 2, 3]);
+
+  // עדכון הטבלה של התמונות המוצגות כרגע
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAllCurrentImages((prev) => {
+        // עדכן את כל התמונות (יוטופל על ידי כל RotatingImageBox)
+        return prev;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
@@ -79,10 +101,10 @@ export const JoinUsSection: React.FC = () => {
         
         {/* Grid של 4 ריבועים - תמונות מסתובבות */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-            <RotatingImageBox category="bbq" alt="BBQ" />
-            <RotatingImageBox category="friends" alt="Friends" />
-            <RotatingImageBox category="sol" alt="Soldiers" />
-            <RotatingImageBox category="bbq" alt="BBQ 2" />
+            <RotatingImageBox boxIndex={0} allCurrentImages={allCurrentImages} />
+            <RotatingImageBox boxIndex={1} allCurrentImages={allCurrentImages} />
+            <RotatingImageBox boxIndex={2} allCurrentImages={allCurrentImages} />
+            <RotatingImageBox boxIndex={3} allCurrentImages={allCurrentImages} />
         </div>
 
         {/* כפתור אינסטגרם */}
