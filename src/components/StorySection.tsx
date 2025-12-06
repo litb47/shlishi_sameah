@@ -34,7 +34,7 @@ const StorySection: React.FC = () => {
 
   return (
     <>
-      <section id="story" className="scroll-mt-40 py-8 md:py-20 bg-transparent" dir="rtl">
+      <section id="story" className="scroll-mt-40 py-5 md:py-20 bg-transparent" dir="rtl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* כותרת ראשית */}
