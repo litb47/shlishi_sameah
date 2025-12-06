@@ -11,7 +11,7 @@ const StorySection: React.FC = () => {
     {
       title: "מסורת שבועית",
       desc: "הריח והטעם הציתו בעוד פצועים את הרצון בפינוק של ארוחת בשרים, אז כך חזר חנן גם ביום שלישי שאחריו ועוד שלישי ועוד אחד והקהל גדל עד שהגענו לכל הפצועים . ועד עצם היום הזה צוות מיומן ומאורגן מגיעים לשמח בארוחת בשרים, מוזיקה, קינוחים ואווירה טובה. על הדרך, יושבים, מדברים ומכירים את הפצועים, את האדם מאחורי הסיפור וכך מתגלה עולם שלם.",
-      img: "https://picsum.photos/600/400?random=3",
+      img: `${import.meta.env.BASE_URL}instagram/23.jpg`,
       reverse: true
     },
     {
@@ -27,7 +27,7 @@ const StorySection: React.FC = () => {
           </span>
         </>
       ),
-      img: "https://picsum.photos/600/400?random=4",
+      img: `${import.meta.env.BASE_URL}instagram/34.jpg`,
       reverse: false
     }
   ];
