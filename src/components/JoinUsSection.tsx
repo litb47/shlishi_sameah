@@ -3,38 +3,24 @@ import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// קומפוננטה לתמונות שמתחלפות עם לוגיקה שלא חוזרות
+// קומפוננטה לתמונות שמתחלפות - כל קופסה בלתי תלויה
 // --------------------------------------------------------
 const RotatingImageBox = ({ 
-  boxIndex,
-  allCurrentImages
+  imageNames
 }: { 
-  boxIndex: number;
-  allCurrentImages: number[];
+  imageNames: string[];
 }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(boxIndex);
-  
-  const totalImages = 6;
-  const imageNames = ['bbq1', 'bbq2', 'bbq3', 'friends1', 'friends2', 'sol1'];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => {
-        let next = (prev + 1) % totalImages;
-        
-        // דלג על תמונות שכבר מוצגות בקופסאות אחרות
-        while (allCurrentImages.includes(next) && next !== prev) {
-          next = (next + 1) % totalImages;
-        }
-        
-        return next;
-      });
+      setCurrentIndex((prev) => (prev + 1) % imageNames.length);
     }, 3000); // החלפה כל 3 שניות
 
     return () => clearInterval(interval);
-  }, [allCurrentImages]);
+  }, [imageNames.length]);
 
-  const imageName = imageNames[currentImageIndex];
+  const imageName = imageNames[currentIndex];
   const src = `${import.meta.env.BASE_URL}instagram/${imageName}.jpg`;
 
   return (
@@ -56,20 +42,6 @@ const RotatingImageBox = ({
 // הקומפוננטה הראשית
 // --------------------------------------------------------
 export const JoinUsSection: React.FC = () => {
-  const [allCurrentImages, setAllCurrentImages] = useState<number[]>([0, 1, 2, 3]);
-
-  // עדכון הטבלה של התמונות המוצגות כרגע
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAllCurrentImages((prev) => {
-        // עדכן את כל התמונות (יוטופל על ידי כל RotatingImageBox)
-        return prev;
-      });
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-  
   return (
     <section id="gallery" className="py-16 container mx-auto px-6 max-w-7xl scroll-mt-24">
       {/* Donation CTA */}
@@ -99,12 +71,12 @@ export const JoinUsSection: React.FC = () => {
           עקבו אחרינו באינסטגרם
         </h3>
         
-        {/* Grid של 4 ריבועים - תמונות מסתובבות */}
+        {/* Grid של 4 ריבועים - כל קופסה עם 3 תמונות שלה */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-            <RotatingImageBox boxIndex={0} allCurrentImages={allCurrentImages} />
-            <RotatingImageBox boxIndex={1} allCurrentImages={allCurrentImages} />
-            <RotatingImageBox boxIndex={2} allCurrentImages={allCurrentImages} />
-            <RotatingImageBox boxIndex={3} allCurrentImages={allCurrentImages} />
+            <RotatingImageBox imageNames={['bbq1', 'bbq2', 'bbq3']} />
+            <RotatingImageBox imageNames={['friends1', 'friends2', 'friends3']} />
+            <RotatingImageBox imageNames={['sol1', 'sol2', 'sol3']} />
+            <RotatingImageBox imageNames={['1', '2', '3']} />
         </div>
 
         {/* כפתור אינסטגרם */}
