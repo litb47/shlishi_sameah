@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { DonationButton } from './DonationButton';
 import { Instagram, CheckCircle } from 'lucide-react';
 
 // --------------------------------------------------------
-// קומפוננטה פשוטה - תמונה בודדת ללא אנימציה
+// קומפוננטה לתמונות שמתחלפות
 // --------------------------------------------------------
-const SimpleImageBox = ({ src, alt }: { src: string; alt: string }) => {
+const RotatingImageBox = ({ 
+  category, 
+  alt 
+}: { 
+  category: 'bbq' | 'friends' | 'sol'; 
+  alt: string;
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // כל קטגוריה יכולה להכיל עד 3 תמונות
+  const totalImages = 3;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % totalImages);
+    }, 3000); // החלפה כל 3 שניות
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const imageNumber = currentIndex + 1;
+  const src = `${import.meta.env.BASE_URL}instagram/${category}${imageNumber}.jpg`;
+
   return (
     <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md bg-gray-200">
       <img
         src={src}
-        alt={alt}
+        alt={`${alt} ${imageNumber}`}
         className="w-full h-full object-cover"
         onError={(e) => {
           console.error('Failed to load:', src);
@@ -55,18 +77,16 @@ export const JoinUsSection: React.FC = () => {
           עקבו אחרינו באינסטגרם
         </h3>
         
-        {/* Grid של 4 ריבועים - תמונה סטטית בכל אחד */}
+        {/* Grid של 4 ריבועים - תמונות מסתובבות */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
-            <SimpleImageBox src={`${import.meta.env.BASE_URL}instagram/bbq1.jpg`} alt="BBQ" />
-            <SimpleImageBox src={`${import.meta.env.BASE_URL}instagram/friends1.jpg`} alt="Friends" />
-            <SimpleImageBox src={`${import.meta.env.BASE_URL}instagram/sol1.jpg`} alt="Soldiers" />
-            <SimpleImageBox src={`${import.meta.env.BASE_URL}instagram/bbq2.jpg`} alt="BBQ 2" />
+            <RotatingImageBox category="bbq" alt="BBQ" />
+            <RotatingImageBox category="friends" alt="Friends" />
+            <RotatingImageBox category="sol" alt="Soldiers" />
+            <RotatingImageBox category="bbq" alt="BBQ 2" />
         </div>
 
         {/* כפתור אינסטגרם */}
-        
-        
-         <a href="https://www.instagram.com/shlishi_sameach/"
+        <a href="https://www.instagram.com/shlishi_sameach/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold text-white transition-all transform bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full hover:scale-105 hover:shadow-lg shadow-md"
