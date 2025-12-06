@@ -46,12 +46,12 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* צד שמאל - תמונה */}
+        {/* צד שמאל - תמונה 77 */}
         <div className="order-1 lg:order-2 animate-scale-in">
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/7d07097ba329151250d867d60152e474b7065c3b?placeholderIfAbsent=true"
+            src={`${import.meta.env.BASE_URL}instagram/77.jpg`}
             className="w-full rounded-br-[150px] shadow-xl"
-            alt="חיילים שמחים"
+            alt="צוות שלישי שמח"
           />
         </div>
       </div>
