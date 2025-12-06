@@ -40,7 +40,7 @@ const StorySection: React.FC = () => {
           {/* כותרת ראשית */}
           <div className="text-center mb-16 space-y-2">
             <h2 className="text-3xl md:text-5xl font-bold text-[#007aff]">
-              ?איך נולד שלישי שמח
+              איך נולד שלישי שמח?
             </h2>
             <p className="text-lg md:text-xl text-[#0D245E] font-medium">
               שלישי שמח הוא ארגון עצמאי, הכל בהתנדבות מלאה!
