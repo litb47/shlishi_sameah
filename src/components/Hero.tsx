@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
 
           {/* --- כאן השינוי של הפונטים --- */}
           <div className="mb-0">
-            <h2 className="text-[#0D245E] leading-tight">
+            <h2 className="text-[#0D245E] leading-none">
               {/* מילה ראשונה: BuNotza */}
               <span className="font-yad text-4xl md:text-5xl lg:text-6xl font-normal block">
                 מחזירים אהבה
